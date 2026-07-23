@@ -1,0 +1,111 @@
+aid: hampden-and-co
+name: Hampden & Co
+review:
+  question: Does Hampden & Co expose a documented public API surface, and can a live
+    Open Data endpoint be independently confirmed?
+  answer: partial
+  date: '2026-07-23'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    Hampden & Co (trading as Hampden Bank) is an independent, shareholder-owned UK
+    private bank (plc SC386922) - not a mutual or building society - authorised by
+    the PRA and regulated by the FCA and PRA. It is NOT one of the CMA9 mandated
+    banks, but it is an FCA-authorised ASPSP registered with the Open Banking
+    Implementation Entity (OBIE) and listed on the UK Open Banking register
+    (https://www.openbanking.org.uk/regulated-providers/hampden-co-plc/), which
+    records support for an Open Data API, dynamic client registration, and MI
+    reporting.
+
+    A real developer portal exists at https://developer-sandbox.hampdendigital.com/
+    (a sandbox environment) and TPP onboarding is reachable from
+    https://www.hampdenbank.com/tpp-registration, which redirects into the portal
+    (developer-sandbox.hampdendigital.com/home). Registration requires the third
+    party to already be correctly permissioned by its competent authority and to
+    present an eIDAS certificate - consistent with an OBIE Read/Write PSD2 dedicated
+    interface secured by FAPI OAuth2/OIDC, mutual-TLS, PSD2 strong customer
+    authentication, and certificate-based dynamic client registration.
+
+    A live Open Data endpoint could NOT be independently confirmed. The developer
+    portal is an Angular single-page application whose server returns HTTP 200 with
+    Content-Type text/html for every path (including deliberately nonsensical paths
+    and standard OBIE Open Data / .well-known routes), so any 200 on an API-shaped
+    URL is a routing catch-all, not a JSON reference-data response. No bank-hosted
+    Open Data or Read/Write resource host resolved to a verifiable JSON endpoint
+    during probing. Resource endpoints for AIS/PIS/CBPII are mTLS-gated and are not
+    publicly probeable without OBIE/eIDAS certificates.
+
+    Spec provenance: the three OpenAPI documents harvested into openapi/ are the
+    SHARED OBIE UK Open Banking Read/Write standard (v4.0.1, OpenAPI 3.0.0) obtained
+    verbatim from github.com/OpenBankingUK/read-write-api-specs. They describe the
+    standard Hampden & Co conforms to as an ASPSP; they are NOT Hampden-proprietary
+    API contracts, and no Hampden-published OpenAPI/Swagger was found to be publicly
+    downloadable.
+  transports:
+    - protocol: REST
+      scheme: https
+      note: OBIE Read/Write (AIS/PIS/CBPII) FAPI-secured dedicated interface; resource host mTLS-gated, not publicly confirmed.
+      documented: true
+    - protocol: REST
+      scheme: https
+      note: OBIE Open Data (public, unauthenticated) per the Open Banking register entry; no live endpoint independently confirmed.
+      documented: true
+      confirmedLive: false
+  authModel:
+    standard: OBIE UK Open Banking Read/Write (PSD2 dedicated interface)
+    fapi: true
+    oauth2Oidc: true
+    mutualTLS: true
+    psd2Sca: true
+    dynamicClientRegistration: true
+    certificates: eIDAS / OBIE
+    cma9: false
+    aspsp: true
+  openDataConfirmed: false
+  openDataBaseURL: ""
+  developerPortal: https://developer-sandbox.hampdendigital.com/
+  probes:
+    - url: https://developer-sandbox.hampdendigital.com/
+      status: 200
+      note: Real developer sandbox portal (Angular SPA).
+    - url: https://developer-sandbox.hampdendigital.com/this-is-not-a-real-endpoint-xyz123
+      status: 200
+      note: Returns text/html - proves the 200 responses are an SPA catch-all, not real endpoints.
+    - url: https://developer-sandbox.hampdendigital.com/open-banking/v2.3/personal-current-accounts
+      status: 200
+      note: text/html (SPA catch-all), not JSON Open Data - therefore NOT a confirmed Open Data endpoint.
+    - url: https://www.hampdenbank.com/tpp-registration
+      status: 200
+      note: TPP onboarding entry; redirects to developer-sandbox.hampdendigital.com/home.
+    - url: https://www.openbanking.org.uk/regulated-providers/hampden-co-plc/
+      status: 200
+      note: OBIE register entry confirming ASPSP status.
+    - url: https://www.hampdenbank.com/
+      status: 200
+      note: Primary domain hampdenandco.com 301-redirects here (rebranded to Hampden Bank).
+spec_provenance:
+  standard: OBIE UK Open Banking Read/Write API Standard v4.0.1
+  source: https://github.com/OpenBankingUK/read-write-api-specs
+  proprietary: false
+  note: |
+    Harvested verbatim as the shared OBIE standard Hampden & Co conforms to, NOT a
+    Hampden-published contract. Files:
+    openapi/hampden-and-co-account-information-api-openapi.yml (Account and Transaction API 4.0.1),
+    openapi/hampden-and-co-payment-initiation-api-openapi.yml (Payment Initiation API 4.0.1),
+    openapi/hampden-and-co-confirmation-of-funds-api-openapi.yml (Confirmation of Funds API 4.0.1).
+sources:
+  - url: https://www.openbanking.org.uk/regulated-providers/hampden-co-plc/
+    type: Registration
+    note: OBIE register entry - Open Data API, dynamic client registration, MI reporting.
+  - url: https://developer-sandbox.hampdendigital.com/
+    type: DeveloperPortal
+    note: Sandbox developer portal (SPA); TPP onboarding with eIDAS certificate.
+  - url: https://www.hampdenbank.com/
+    type: Website
+    note: Bank site (rebranded Hampden Bank); PRA/FCA authorised, plc SC386922, Edinburgh.
+  - url: https://github.com/OpenBankingUK/read-write-api-specs
+    type: OpenAPI
+    note: Source of the shared OBIE Read/Write v4.0.1 standard specs harvested into openapi/.
+  - url: https://en.wikipedia.org/wiki/Hampden_%26_Co.
+    type: Reference
+    note: Founding (2010 as Scoban, launched 2015), shareholder-owned plc, deposits over £1bn (2025).

@@ -1,0 +1,157 @@
+aid: hampden-and-co
+url: https://raw.githubusercontent.com/api-evangelist/hampden-and-co/refs/heads/main/apis.yml
+name: Hampden & Co
+kind: company
+description: >-
+  Hampden & Co (trading as Hampden Bank since March 2024) is an independent
+  UK private bank headquartered at 20/21 Charlotte Square, Edinburgh, with offices in
+  London and Manchester, serving high-net-worth individuals, their families, and their
+  businesses with day-to-day banking, deposits, and specialist lending. Incorporated
+  in 2010 as "Scoban" and launched in 2015, it was the first newly created UK private
+  bank in three decades; it is a shareholder-owned public limited company (SC386922) -
+  not a mutual or building society - backed by cornerstone shareholders and hundreds
+  of smaller investors, and passed £1 billion in deposits in 2025. It is authorised by
+  the Prudential Regulation Authority and regulated by the Financial Conduct Authority
+  and the PRA. Although not one of the CMA9 mandated banks, Hampden & Co is an
+  FCA-authorised ASPSP registered with the Open Banking Implementation Entity (OBIE)
+  and exposes a PSD2 dedicated interface: an Open Data reference API plus the OBIE
+  Read/Write family (Account & Transaction Information, Payment Initiation, and
+  Confirmation of Funds), onboarded through a developer sandbox portal and secured with
+  FAPI-grade OAuth2/OIDC, mutual-TLS, PSD2 strong customer authentication, and eIDAS/OBIE
+  certificate-based dynamic client registration.
+accessModel:
+  pricing: unknown
+  onboarding: partner
+  trial: false
+  try_now: false
+  public: false
+  label: TPP onboarding · eIDAS/OBIE certificates required
+  confidence: medium
+  source:
+  - authentication
+  - onboarding
+  generated: '2026-07-23'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Financial Services
+- Banking
+- Private Banking
+- Open Banking
+- PSD2
+- OBIE
+- FAPI
+- United Kingdom
+- Payments
+- Account Information
+created: '2026-07-23'
+modified: '2026-07-23'
+specificationVersion: '0.19'
+apis:
+- aid: hampden-and-co:hampden-and-co-open-data-api
+  name: Hampden & Co Open Data API
+  description: Public, unauthenticated Open Data reference API conforming to the OBIE
+    UK Open Banking Open Data standard (product reference data such as personal and
+    business current accounts). Listed on Hampden & Co's Open Banking register entry;
+    a live Open Data endpoint could not be independently confirmed at bootstrap (the
+    developer portal is a single-page app that returns HTML for all paths), so the
+    surface is represented from documentation rather than a verified base URL.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Open Data
+  - Reference Data
+  properties:
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: Registration
+    url: https://www.openbanking.org.uk/regulated-providers/hampden-co-plc/
+- aid: hampden-and-co:hampden-and-co-account-information-api
+  name: Hampden & Co Account & Transaction Information API
+  description: OBIE Read/Write Account Information Service (AIS) - accounts, balances,
+    transactions, beneficiaries, standing orders, direct debits, statements, and
+    parties - as a FAPI-secured PSD2 dedicated interface. The harvested OpenAPI is the
+    shared OBIE Read/Write standard (v4.0.1), not a Hampden-proprietary contract;
+    production access requires TPP onboarding with eIDAS/OBIE certificates.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Account Information
+  - AIS
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-account-information-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-payment-initiation-api
+  name: Hampden & Co Payment Initiation API
+  description: OBIE Read/Write Payment Initiation Service (PIS) - domestic, scheduled,
+    standing-order, international, and file payments - as a FAPI-secured PSD2 dedicated
+    interface. The harvested OpenAPI is the shared OBIE Read/Write standard (v4.0.1),
+    not a Hampden-proprietary contract; production access requires TPP onboarding with
+    eIDAS/OBIE certificates and PSD2 strong customer authentication.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Payment Initiation
+  - PIS
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-payment-initiation-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-confirmation-of-funds-api
+  name: Hampden & Co Confirmation of Funds API
+  description: OBIE Read/Write Confirmation of Funds Service (CBPII) allowing an
+    authorised card-based payment instrument issuer to confirm the availability of
+    funds, as a FAPI-secured PSD2 dedicated interface. The harvested OpenAPI is the
+    shared OBIE Read/Write standard (v4.0.1), not a Hampden-proprietary contract;
+    production access requires TPP onboarding with eIDAS/OBIE certificates.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Confirmation of Funds
+  - CBPII
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-confirmation-of-funds-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+common:
+- type: Website
+  url: https://www.hampdenbank.com/
+- type: DeveloperPortal
+  url: https://developer-sandbox.hampdendigital.com/
+- type: Documentation
+  url: https://developer-sandbox.hampdendigital.com/home
+- type: SignUp
+  url: https://www.hampdenbank.com/tpp-registration
+- type: Compliance
+  url: https://www.openbanking.org.uk/regulated-providers/hampden-co-plc/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/hampden-bank
+- type: Blog
+  url: https://www.hampdenbank.com/insights
+- type: Support
+  url: https://www.hampdenbank.com/contact-us
+- type: TermsOfService
+  url: https://www.hampdenbank.com/terms-conditions
+- type: PrivacyPolicy
+  url: https://www.hampdenbank.com/privacy-notice
+- type: CookiePolicy
+  url: https://www.hampdenbank.com/cookie-policy
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
