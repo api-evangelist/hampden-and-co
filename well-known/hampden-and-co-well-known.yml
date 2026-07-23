@@ -1,0 +1,25 @@
+generated: '2026-07-23'
+method: probed
+note: >-
+  No real /.well-known/ discovery documents were found. www.hampdenbank.com
+  returns 404 for every probed path; the developer-sandbox host is an Angular SPA
+  that returns HTTP 200 with Content-Type text/html for ALL paths (a routing
+  catch-all), so its 200s are the SPA shell, not machine-readable documents. The
+  live OIDC/OAuth discovery endpoints sit behind the mTLS-gated resource host,
+  which is not publicly probeable without OBIE/eIDAS certificates. Recorded as a
+  negative result; no WellKnown pointer is wired because no real document exists.
+hosts:
+  - host: https://www.hampdenbank.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+  - host: https://developer-sandbox.hampdendigital.com
+    documents:
+      - {path: /.well-known/security.txt, status: 200, real: false, note: SPA catch-all text/html, not a document.}
+      - {path: /.well-known/openid-configuration, status: 200, real: false, note: SPA catch-all text/html, not a document.}
+      - {path: /.well-known/oauth-authorization-server, status: 200, real: false, note: SPA catch-all text/html, not a document.}
+      - {path: /.well-known/api-catalog, status: 200, real: false, note: SPA catch-all text/html, not a document.}
+      - {path: /.well-known/ai-plugin.json, status: 200, real: false, note: SPA catch-all text/html, not a document.}

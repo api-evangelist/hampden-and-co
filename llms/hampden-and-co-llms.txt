@@ -1,0 +1,28 @@
+# Hampden & Co
+
+> Hampden & Co (trading as Hampden Bank) is an independent, shareholder-owned UK private bank (plc SC386922) headquartered in Edinburgh, authorised by the PRA and regulated by the FCA and PRA. It is an FCA-authorised ASPSP registered with the Open Banking Implementation Entity (OBIE) and exposes a PSD2 dedicated interface — an Open Data reference API plus the OBIE Read/Write family (Account & Transaction Information, Payment Initiation, and Confirmation of Funds) — secured with FAPI OAuth2/OIDC, mutual-TLS, PSD2 strong customer authentication, and eIDAS/OBIE certificate-based dynamic client registration.
+
+Access note: the Read/Write resource host is mTLS-gated and requires TPP onboarding with eIDAS/OBIE certificates. The OpenAPI documents here are the shared OBIE Read/Write v4.0.1 standard the bank conforms to, not a Hampden-proprietary contract.
+
+## APIs
+- [Account & Transaction Information API (AIS)](openapi/hampden-and-co-account-information-api-openapi.yml): OBIE Read/Write AIS — accounts, balances, transactions, beneficiaries, standing orders, direct debits, statements, parties.
+- [Payment Initiation API (PIS)](openapi/hampden-and-co-payment-initiation-api-openapi.yml): OBIE Read/Write PIS — domestic, scheduled, standing-order, international, and file payments.
+- [Confirmation of Funds API (CBPII)](openapi/hampden-and-co-confirmation-of-funds-api-openapi.yml): OBIE Read/Write CBPII — confirm availability of funds.
+- Open Data API: OBIE Open Data reference data (per the OBIE register entry); no live endpoint independently confirmed.
+
+## Artifacts
+- [Authentication](authentication/hampden-and-co-authentication.yml): OAuth2 (TPP client-credentials + PSU authorization-code / SCA).
+- [OAuth scopes](scopes/hampden-and-co-scopes.yml): accounts, payments, fundsconfirmations.
+- [Conventions](conventions/hampden-and-co-conventions.yml): idempotency (x-idempotency-key, 24h), FAPI headers, JWS signing, pagination, versioning.
+- [Error catalog](errors/hampden-and-co-problem-types.yml): OBErrorResponse1 envelope + UK.OBIE.* error codes.
+- [Conformance](conformance/hampden-and-co-conformance.yml): OBIE 4.0.1, PSD2, FAPI, OAuth2/OIDC, mTLS, SCA.
+- [Data model](data-model/hampden-and-co-data-model.yml): AIS/PIS/CBPII entity graph.
+- [Agent skills](skills/_index.yml): account access (AIS), domestic payment (PIS).
+- [MCP tools (candidate)](mcp/hampden-and-co-mcp.yml): derived read/CoF tool surface.
+
+## Docs
+- [Developer portal (sandbox)](https://developer-sandbox.hampdendigital.com/)
+- [TPP registration](https://www.hampdenbank.com/tpp-registration)
+- [OBIE register entry](https://www.openbanking.org.uk/regulated-providers/hampden-co-plc/)
+- [OBIE Read/Write standard](https://standards.openbanking.org.uk/api-specifications/latest/)
+- [Website](https://www.hampdenbank.com/)

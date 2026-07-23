@@ -1,0 +1,88 @@
+generated: '2026-07-23'
+method: derived
+source: >-
+  openapi/hampden-and-co-account-information-api-openapi.yml,
+  openapi/hampden-and-co-payment-initiation-api-openapi.yml,
+  openapi/hampden-and-co-confirmation-of-funds-api-openapi.yml
+note: >-
+  Entity-relationship graph derived from the OBIE Read/Write v4.0.1 resource model
+  the bank conforms to. Resources are addressed under /open-banking/v4.0/{service}.
+entities:
+  - name: AccountAccessConsent
+    api: account-information
+    key: ConsentId
+    description: AISP consent granting read access to a PSU's account data.
+  - name: Account
+    api: account-information
+    key: AccountId
+    description: A PSU bank account exposed to a consented AISP.
+  - name: Balance
+    api: account-information
+    description: Point-in-time balance for an account.
+  - name: Transaction
+    api: account-information
+    description: Booked or pending movement on an account.
+  - name: Beneficiary
+    api: account-information
+    description: Saved payee associated with an account.
+  - name: StandingOrder
+    api: account-information
+    description: Recurring fixed payment instruction on an account.
+  - name: DirectDebit
+    api: account-information
+    description: Mandate authorising a third party to collect from an account.
+  - name: ScheduledPayment
+    api: account-information
+    description: Future-dated one-off payment on an account.
+  - name: Statement
+    api: account-information
+    key: StatementId
+    description: Periodic account statement, optionally with a downloadable file.
+  - name: Party
+    api: account-information
+    description: The account owner / related party (PSU).
+  - name: Product
+    api: account-information
+    description: Product reference data for an account.
+  - name: Offer
+    api: account-information
+    description: Offer associated with an account.
+  - name: DomesticPaymentConsent
+    api: payment-initiation
+    key: ConsentId
+    description: PISP consent to initiate a domestic payment.
+  - name: DomesticPayment
+    api: payment-initiation
+    key: DomesticPaymentId
+    description: An initiated domestic payment order.
+  - name: InternationalPaymentConsent
+    api: payment-initiation
+    key: ConsentId
+    description: PISP consent to initiate an international payment.
+  - name: FilePaymentConsent
+    api: payment-initiation
+    key: ConsentId
+    description: PISP consent for a bulk/batch file payment.
+  - name: FundsConfirmationConsent
+    api: confirmation-of-funds
+    key: ConsentId
+    description: CBPII consent to confirm availability of funds.
+  - name: FundsConfirmation
+    api: confirmation-of-funds
+    description: A funds-availability confirmation result.
+relationships:
+  - {from: Account, type: belongs_to, to: AccountAccessConsent, via: ConsentId}
+  - {from: Balance, type: belongs_to, to: Account, via: AccountId}
+  - {from: Transaction, type: belongs_to, to: Account, via: AccountId}
+  - {from: Beneficiary, type: belongs_to, to: Account, via: AccountId}
+  - {from: StandingOrder, type: belongs_to, to: Account, via: AccountId}
+  - {from: DirectDebit, type: belongs_to, to: Account, via: AccountId}
+  - {from: ScheduledPayment, type: belongs_to, to: Account, via: AccountId}
+  - {from: Statement, type: belongs_to, to: Account, via: AccountId}
+  - {from: Transaction, type: belongs_to, to: Statement, via: StatementId}
+  - {from: Party, type: belongs_to, to: Account, via: AccountId}
+  - {from: Product, type: belongs_to, to: Account, via: AccountId}
+  - {from: Account, type: has_many, to: Balance, via: AccountId}
+  - {from: Account, type: has_many, to: Transaction, via: AccountId}
+  - {from: DomesticPayment, type: belongs_to, to: DomesticPaymentConsent, via: ConsentId}
+  - {from: FundsConfirmation, type: belongs_to, to: FundsConfirmationConsent, via: ConsentId}

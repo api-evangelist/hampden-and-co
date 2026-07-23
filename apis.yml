@@ -81,6 +81,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/hampden-and-co-account-information-api-openapi.yml
+  - type: Overlay
+    url: overlays/hampden-and-co-account-information-api-overlay.yaml
   - type: Documentation
     url: https://developer-sandbox.hampdendigital.com/home
   - type: APIReference
@@ -102,6 +104,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/hampden-and-co-payment-initiation-api-openapi.yml
+  - type: Overlay
+    url: overlays/hampden-and-co-payment-initiation-api-overlay.yaml
   - type: Documentation
     url: https://developer-sandbox.hampdendigital.com/home
   - type: APIReference
@@ -123,6 +127,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/hampden-and-co-confirmation-of-funds-api-openapi.yml
+  - type: Overlay
+    url: overlays/hampden-and-co-confirmation-of-funds-api-overlay.yaml
   - type: Documentation
     url: https://developer-sandbox.hampdendigital.com/home
   - type: APIReference
@@ -130,6 +136,14 @@ apis:
   - type: Registration
     url: https://www.hampdenbank.com/tpp-registration
 common:
+- type: DomainSecurity
+  url: security/hampden-and-co-domain-security.yml
+- type: AgenticAccess
+  url: agentic-access/hampden-and-co-agentic-access.yml
+- type: Authentication
+  url: authentication/hampden-and-co-authentication.yml
+- type: OAuthScopes
+  url: scopes/hampden-and-co-scopes.yml
 - type: Website
   url: https://www.hampdenbank.com/
 - type: DeveloperPortal
@@ -152,6 +166,26 @@ common:
   url: https://www.hampdenbank.com/privacy-notice
 - type: CookiePolicy
   url: https://www.hampdenbank.com/cookie-policy
+- type: Conventions
+  url: conventions/hampden-and-co-conventions.yml
+- type: Idempotency
+  url: conventions/hampden-and-co-conventions.yml
+- type: ErrorCatalog
+  url: errors/hampden-and-co-problem-types.yml
+- type: Conformance
+  url: conformance/hampden-and-co-conformance.yml
+- type: Lifecycle
+  url: lifecycle/hampden-and-co-lifecycle.yml
+- type: DataModel
+  url: data-model/hampden-and-co-data-model.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: MCPServer
+  url: mcp/hampden-and-co-mcp.yml
+- type: LLMsTxt
+  url: llms/hampden-and-co-llms.txt
+- type: APIReference
+  url: https://standards.openbanking.org.uk/api-specifications/latest/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

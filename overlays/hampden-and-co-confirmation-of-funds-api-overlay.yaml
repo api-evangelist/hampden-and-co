@@ -1,0 +1,14 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Hampden & Co Confirmation of Funds API
+  version: 1.0.0
+extends: openapi/hampden-and-co-confirmation-of-funds-api-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: hampden-and-co
+      x-apievangelist-standard: OBIE UK Open Banking Read/Write v4.0.1
+      x-apievangelist-note: >-
+        Shared OBIE Read/Write standard the ASPSP conforms to; resource host is
+        FAPI/mTLS-gated behind OBIE/eIDAS certificates. Not a Hampden-proprietary
+        contract.

@@ -1,0 +1,22 @@
+generated: '2026-07-23'
+method: derived
+source: >-
+  openapi/hampden-and-co-account-information-api-openapi.yml, review.yml
+note: >-
+  Versioning follows the OBIE Read/Write standard the bank conforms to; Hampden &
+  Co does not publish a proprietary deprecation policy, SLA, or status page on the
+  developer sandbox portal (an Angular SPA), so those are recorded as not-found
+  rather than fabricated.
+versioning:
+  scheme: uri-path
+  current: v4.0.1
+  standard: OBIE UK Open Banking Read/Write API Standard
+  docs: https://standards.openbanking.org.uk/api-specifications/latest/
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: OBIE governs standard-version deprecation centrally; no bank-specific policy published.
+sla:
+  url: null
+status_page: null
+deprecated_operations: []

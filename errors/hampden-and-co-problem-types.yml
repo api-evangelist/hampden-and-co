@@ -1,0 +1,76 @@
+generated: '2026-07-23'
+method: derived
+source: >-
+  openapi/hampden-and-co-account-information-api-openapi.yml,
+  openapi/hampden-and-co-payment-initiation-api-openapi.yml,
+  openapi/hampden-and-co-confirmation-of-funds-api-openapi.yml
+format: obie-error
+envelope: OBErrorResponse1
+note: >-
+  HTTP problem statuses derived from the OBIE Read/Write v4.0.1 responses; the
+  fine-grained UK.OBIE.* ErrorCode registry is the OBIE-standard error code set
+  carried in each OBError1.ErrorCode. OBIE uses its own OBErrorResponse1 envelope,
+  not RFC 9457 application/problem+json.
+envelope_shape:
+  OBErrorResponse1:
+    Code: High-level textual error code categorising the error (deprecated field).
+    Id: Unique reference for the error instance for audit purposes.
+    Message: High-level description of the error.
+    Errors: Array of OBError1 detail objects.
+  OBError1:
+    ErrorCode: Low-level UK.OBIE.* error code (required).
+    Message: Human-readable description of the specific error.
+    Path: JSON path of the offending field (e.g. Data.Initiation.InstructedAmount.Currency).
+    Url: Optional URL to remediation guidance.
+problems:
+  - status: 400
+    title: Bad Request
+    description: Request failed validation; body carries an OBErrorResponse1 with detail OBError1[].
+  - status: 401
+    title: Unauthorized
+    description: Missing, invalid, or expired access token / SCA not completed.
+  - status: 403
+    title: Forbidden
+    description: Token lacks the required scope or consent for the resource.
+  - status: 404
+    title: Not Found
+    description: Resource (account, consent, payment) does not exist or is not visible to the TPP.
+  - status: 405
+    title: Method Not Allowed
+    description: HTTP method not supported for the resource.
+  - status: 406
+    title: Not Acceptable
+    description: Requested representation (Accept header) cannot be produced.
+  - status: 415
+    title: Unsupported Media Type
+    description: Request Content-Type is not supported.
+  - status: 429
+    title: Too Many Requests
+    description: TPP has exceeded the ASPSP rate limit; retry after backoff.
+  - status: 500
+    title: Internal Server Error
+    description: Unexpected ASPSP error; body carries an OBErrorResponse1 with an audit Id.
+error_codes:
+  note: OBIE-standard UK.OBIE.* ErrorCode registry carried in OBError1.ErrorCode.
+  codes:
+    - {code: UK.OBIE.Field.Expected, meaning: A field that is expected given the context is missing.}
+    - {code: UK.OBIE.Field.Invalid, meaning: Field value fails a validation rule.}
+    - {code: UK.OBIE.Field.InvalidDate, meaning: Date field is invalid or out of allowed range.}
+    - {code: UK.OBIE.Field.Missing, meaning: A mandatory field is not supplied.}
+    - {code: UK.OBIE.Field.Unexpected, meaning: A field is present that should not be.}
+    - {code: UK.OBIE.Header.Invalid, meaning: A request header value is invalid.}
+    - {code: UK.OBIE.Header.Missing, meaning: A mandatory request header is missing.}
+    - {code: UK.OBIE.Reauthenticate, meaning: PSU must re-authenticate (SCA) to continue.}
+    - {code: UK.OBIE.Resource.ConsentMismatch, meaning: Resource does not match the granted consent.}
+    - {code: UK.OBIE.Resource.InvalidConsentStatus, meaning: Consent is not in a state that permits the operation.}
+    - {code: UK.OBIE.Resource.InvalidFormat, meaning: Resource identifier is malformed.}
+    - {code: UK.OBIE.Resource.NotFound, meaning: Referenced resource cannot be found.}
+    - {code: UK.OBIE.Rules.AfterCutOffDateTime, meaning: Request received after the payment cut-off time.}
+    - {code: UK.OBIE.Rules.DuplicateReference, meaning: Duplicate end-to-end/instruction reference detected.}
+    - {code: UK.OBIE.Rules.FailsControlSum, meaning: File payment control sum does not reconcile.}
+    - {code: UK.OBIE.Rules.ResourceAlreadyExists, meaning: Idempotent resource already exists for this key.}
+    - {code: UK.OBIE.Signature.Invalid, meaning: x-jws-signature is present but invalid.}
+    - {code: UK.OBIE.Signature.Missing, meaning: x-jws-signature is required but missing.}
+    - {code: UK.OBIE.Unauthorized, meaning: TPP is not authorised for the requested operation.}
+    - {code: UK.OBIE.UnexpectedError, meaning: Unclassified server error; see Id for audit.}
+    - {code: UK.OBIE.Unsupported.Scheme, meaning: Requested scheme/local instrument is not supported by the ASPSP.}

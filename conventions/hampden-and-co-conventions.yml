@@ -1,0 +1,67 @@
+generated: '2026-07-23'
+method: derived
+source: >-
+  openapi/hampden-and-co-account-information-api-openapi.yml,
+  openapi/hampden-and-co-payment-initiation-api-openapi.yml,
+  openapi/hampden-and-co-confirmation-of-funds-api-openapi.yml
+standard: OBIE UK Open Banking Read/Write API Standard v4.0.1
+note: >-
+  Cross-cutting request/response semantics for Hampden & Co's FAPI-secured PSD2
+  dedicated interface. Derived from the shared OBIE Read/Write v4.0.1 OpenAPI the
+  bank conforms to as an ASPSP; these are the OBIE-mandated conventions, not
+  Hampden-proprietary behaviour.
+authentication:
+  style: oauth2
+  detail: >-
+    FAPI-grade OAuth2/OIDC. TPP client-credentials grant (TPPOAuth2Security) for
+    ASPSP-authorised access; PSU authorization-code grant (PSUOAuth2Security) for
+    PSD2 strong customer authentication (SCA). Mutual-TLS (mTLS) bound tokens and
+    eIDAS/OBIE certificate-based dynamic client registration.
+  cross_ref: authentication/hampden-and-co-authentication.yml
+idempotency:
+  supported: true
+  header: x-idempotency-key
+  scope: POST payment-order and funds-confirmation resource creation
+  retention: 24 hours
+  max_length: 40
+  behaviour: >-
+    Every request is processed only once per x-idempotency-key value. The key is
+    valid for 24 hours; a replayed key within the window returns the original
+    result rather than creating a duplicate payment.
+  evidence: components.parameters.x-idempotency-key (AIS, PIS, CBPII specs)
+message_signing:
+  header: x-jws-signature
+  detail: >-
+    Detached JWS signature (RFC 7515) carried in the x-jws-signature header on
+    payment-initiation request and response bodies, per OBIE non-repudiation.
+pagination:
+  style: cursor-links
+  detail: >-
+    List responses carry a Links object (Self, First, Prev, Next, Last) and a
+    Meta object (TotalPages, FirstAvailableDateTime, LastAvailableDateTime).
+    Transaction/statement windows are filtered with fromBookingDateTime /
+    toBookingDateTime query parameters.
+  request_params: [fromBookingDateTime, toBookingDateTime, fromStatementDateTime, toStatementDateTime]
+  response_fields: [Links.Next, Links.Prev, Meta.TotalPages]
+request_tracing:
+  header: x-fapi-interaction-id
+  detail: >-
+    RFC-style correlation id echoed by the ASPSP on every response for
+    end-to-end tracing; x-fapi-auth-date and x-fapi-customer-ip-address convey
+    PSU context, x-customer-user-agent conveys the PSU device.
+versioning:
+  scheme: uri-path
+  current: v4.0
+  detail: OBIE Read/Write resources are versioned in the path (e.g. /open-banking/v4.0/aisp).
+  cross_ref: lifecycle/hampden-and-co-lifecycle.yml
+error_envelope:
+  shape: OBErrorResponse1
+  detail: >-
+    Errors return an OBErrorResponse1 object { Code, Id, Message, Errors[] }
+    where each Errors[] item is an OBError1 { ErrorCode, Message, Path, Url }.
+    ErrorCode uses the UK.OBIE.* namespace. Not RFC 9457 problem+json.
+  cross_ref: errors/hampden-and-co-problem-types.yml
+rate_limiting:
+  detail: >-
+    OBIE ASPSPs signal throttling with HTTP 429 Too Many Requests; per-TPP limits
+    are set by the ASPSP and not published in the standard OpenAPI.

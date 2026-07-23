@@ -1,0 +1,14 @@
+generated: '2026-07-23'
+method: generated
+note: >-
+  Agent Skills grounded in real operationIds from the OBIE Read/Write v4.0.1 specs
+  Hampden & Co conforms to. Access is FAPI/mTLS-gated behind OBIE/eIDAS certs.
+skills:
+  - file: hampden-and-co-account-access.md
+    name: Access Hampden & Co accounts and transactions (AIS)
+    api: openapi/hampden-and-co-account-information-api-openapi.yml
+    operations: [CreateAccountAccessConsents, GetAccountAccessConsentsConsentId, GetAccounts, GetAccountsAccountId, GetAccountsAccountIdBalances, GetAccountsAccountIdTransactions]
+  - file: hampden-and-co-domestic-payment.md
+    name: Initiate a domestic payment via Hampden & Co (PIS)
+    api: openapi/hampden-and-co-payment-initiation-api-openapi.yml
+    operations: [CreateDomesticPaymentConsents, GetDomesticPaymentConsentsConsentId, GetDomesticPaymentConsentsConsentIdFundsConfirmation, CreateDomesticPayments, GetDomesticPaymentsDomesticPaymentId]

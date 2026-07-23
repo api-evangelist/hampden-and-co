@@ -1,0 +1,52 @@
+generated: '2026-07-23'
+method: derived
+source: >-
+  openapi/hampden-and-co-account-information-api-openapi.yml,
+  openapi/hampden-and-co-payment-initiation-api-openapi.yml,
+  openapi/hampden-and-co-confirmation-of-funds-api-openapi.yml,
+  review.yml
+note: >-
+  Standards the Hampden & Co PSD2 dedicated interface conforms to as an
+  FCA-authorised ASPSP registered with the OBIE. Derived from the OBIE Read/Write
+  v4.0.1 specs and the OBIE register entry.
+standards:
+  - id: obie-read-write-4.0.1
+    conforms: true
+    evidence: OpenAPI specs are OBIE UK Open Banking Read/Write standard v4.0.1 verbatim.
+  - id: psd2
+    conforms: true
+    evidence: FCA-authorised ASPSP exposing a PSD2 dedicated interface (AIS/PIS/CBPII).
+  - id: oauth2
+    conforms: true
+    evidence: openapi securitySchemes type oauth2 (TPPOAuth2Security clientCredentials, PSUOAuth2Security authorizationCode).
+  - id: oidc
+    conforms: true
+    evidence: FAPI OAuth2/OIDC per OBIE register entry (dynamic client registration, SCA).
+  - id: fapi
+    conforms: true
+    evidence: x-fapi-interaction-id / x-fapi-auth-date / x-fapi-customer-ip-address headers; FAPI-grade security per review.yml authModel.
+  - id: mutual-tls
+    conforms: true
+    evidence: mTLS-bound tokens and eIDAS/OBIE certificate-based DCR per review.yml.
+  - id: sca
+    conforms: true
+    evidence: PSD2 strong customer authentication via PSUOAuth2Security authorization-code flow.
+  - id: dynamic-client-registration
+    conforms: true
+    evidence: OBIE register entry records dynamic client registration support.
+  - id: jws-detached-signature
+    conforms: true
+    evidence: x-jws-signature parameter on payment-initiation operations (OBIE non-repudiation, RFC 7515).
+  - id: idempotency
+    conforms: true
+    evidence: x-idempotency-key parameter with 24h retention on payment/funds-confirmation creation.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors use the OBIE OBErrorResponse1 envelope, not RFC 9457 application/problem+json.
+compliance:
+  note: >-
+    Regulatory posture is published via the FCA/PRA authorisation and the OBIE
+    register entry (Compliance pointer in apis.yml). No independent SOC 2 / ISO
+    27001 trust center was found for the developer surface.
+  regulator: [PRA, FCA]
+  register: https://www.openbanking.org.uk/regulated-providers/hampden-co-plc/
