@@ -46,7 +46,7 @@ tags:
 - Account Information
 created: '2026-07-23'
 modified: '2026-07-23'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: hampden-and-co:hampden-and-co-open-data-api
   name: Hampden & Co Open Data API
