@@ -1,0 +1,2414 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Payment Initiation API",
+    "version": "4.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Domestic Payment Consents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a Domestic Payment Consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/open-banking/v4.0/pisp/domestic-payment-consents",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-idempotency-key",
+                "value": ""
+              },
+              {
+                "name": "x-jws-signature",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to register an intent to initiate a Domestic Payment."
+        },
+        {
+          "info": {
+            "name": "Get a Domestic Payment Consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/domestic-payment-consents/:ConsentId",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ConsentId",
+                "value": "",
+                "type": "path",
+                "description": "ConsentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve the status of an intent to initiate a Domestic Payment."
+        },
+        {
+          "info": {
+            "name": "Confirm availability of funds for a Domestic Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/domestic-payment-consents/:ConsentId/funds-confirmation",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ConsentId",
+                "value": "",
+                "type": "path",
+                "description": "ConsentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to check whether a PSU has sufficient available funds for a Domestic Payment."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Domestic Payments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Initiate a Domestic Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/open-banking/v4.0/pisp/domestic-payments",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-idempotency-key",
+                "value": ""
+              },
+              {
+                "name": "x-jws-signature",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to initiate an already PSU-approved Domestic Payment."
+        },
+        {
+          "info": {
+            "name": "Get a Domestic Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/domestic-payments/:DomesticPaymentId",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "DomesticPaymentId",
+                "value": "",
+                "type": "path",
+                "description": "DomesticPaymentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve the status of a Domestic Payment."
+        },
+        {
+          "info": {
+            "name": "Get details of a Domestic Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/domestic-payments/:DomesticPaymentId/payment-details",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "DomesticPaymentId",
+                "value": "",
+                "type": "path",
+                "description": "DomesticPaymentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve detailed information on the status of a Domestic Payment."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Domestic Scheduled Payment Consents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a Domestic Scheduled Payment Consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/open-banking/v4.0/pisp/domestic-scheduled-payment-consents",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-idempotency-key",
+                "value": ""
+              },
+              {
+                "name": "x-jws-signature",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to register an intent to initiate a Domestic Scheduled Payment."
+        },
+        {
+          "info": {
+            "name": "Get a Domestic Scheduled Payment Consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/domestic-scheduled-payment-consents/:ConsentId",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ConsentId",
+                "value": "",
+                "type": "path",
+                "description": "ConsentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve the status of an intent to initiate a Domestic Scheduled Payment."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Domestic Scheduled Payments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Initiate a Domestic Scheduled Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/open-banking/v4.0/pisp/domestic-scheduled-payments",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-idempotency-key",
+                "value": ""
+              },
+              {
+                "name": "x-jws-signature",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to initiate an already PSU-approved Domestic Scheduled Payment."
+        },
+        {
+          "info": {
+            "name": "Get a Domestic Scheduled Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/domestic-scheduled-payments/:DomesticScheduledPaymentId",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "DomesticScheduledPaymentId",
+                "value": "",
+                "type": "path",
+                "description": "DomesticScheduledPaymentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve the status of a Domestic Scheduled Payment."
+        },
+        {
+          "info": {
+            "name": "Get details of a Domestic Scheduled Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/domestic-scheduled-payments/:DomesticScheduledPaymentId/payment-details",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "DomesticScheduledPaymentId",
+                "value": "",
+                "type": "path",
+                "description": "DomesticScheduledPaymentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve detailed information on the status of a Domestic Scheduled Payment."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Domestic Standing Order Consents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a Domestic Standing Order Consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/open-banking/v4.0/pisp/domestic-standing-order-consents",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-idempotency-key",
+                "value": ""
+              },
+              {
+                "name": "x-jws-signature",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to register an intent to initiate a Domestic Standing Order arrangement."
+        },
+        {
+          "info": {
+            "name": "Get a Domestic Standing Order Consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/domestic-standing-order-consents/:ConsentId",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ConsentId",
+                "value": "",
+                "type": "path",
+                "description": "ConsentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve the status of an intent to initiate a Domestic Standing Order arrangement."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Domestic Standing Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Submit a Domestic Standing Order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/open-banking/v4.0/pisp/domestic-standing-orders",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-idempotency-key",
+                "value": ""
+              },
+              {
+                "name": "x-jws-signature",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to submit a Domestic Standing Order payment under an already PSU-approved Domestic Standing Order arrangement."
+        },
+        {
+          "info": {
+            "name": "Get a Domestic Standing Order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/domestic-standing-orders/:DomesticStandingOrderId",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "DomesticStandingOrderId",
+                "value": "",
+                "type": "path",
+                "description": "DomesticStandingOrderId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve the status of a Domestic Standing Order payment."
+        },
+        {
+          "info": {
+            "name": "Get details of a Domestic Standing Order Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/domestic-standing-orders/:DomesticStandingOrderId/payment-details",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "DomesticStandingOrderId",
+                "value": "",
+                "type": "path",
+                "description": "DomesticStandingOrderId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve detailed information on the status of a Domestic Standing Order payment."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "File Payment Consents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a File Payment Consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/open-banking/v4.0/pisp/file-payment-consents",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-idempotency-key",
+                "value": ""
+              },
+              {
+                "name": "x-jws-signature",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to register an intent to initiate a File Payment."
+        },
+        {
+          "info": {
+            "name": "Get a File Payment Consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/file-payment-consents/:ConsentId",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ConsentId",
+                "value": "",
+                "type": "path",
+                "description": "ConsentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve the status of an intent to initiate a File Payment."
+        },
+        {
+          "info": {
+            "name": "Get a File Payment Consent's Uploaded File",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/file-payment-consents/:ConsentId/file",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ConsentId",
+                "value": "",
+                "type": "path",
+                "description": "ConsentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to download a file that has been previously uploaded."
+        },
+        {
+          "info": {
+            "name": "Upload a File for a ConsentId",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/open-banking/v4.0/pisp/file-payment-consents/:ConsentId/file",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-idempotency-key",
+                "value": ""
+              },
+              {
+                "name": "x-jws-signature",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ConsentId",
+                "value": "",
+                "type": "path",
+                "description": "ConsentId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to upload a file of payments to the ASPSP for PSU to authenticate."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "File Payments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Submit a File Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/open-banking/v4.0/pisp/file-payments",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-idempotency-key",
+                "value": ""
+              },
+              {
+                "name": "x-jws-signature",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to instruct the ASPSP to start processing the payments within the file."
+        },
+        {
+          "info": {
+            "name": "Get a File Payment by FilePaymentId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/file-payments/:FilePaymentId",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "FilePaymentId",
+                "value": "",
+                "type": "path",
+                "description": "FilePaymentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve the status of a file payment."
+        },
+        {
+          "info": {
+            "name": "Get payment details for a File Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/file-payments/:FilePaymentId/payment-details",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "FilePaymentId",
+                "value": "",
+                "type": "path",
+                "description": "FilePaymentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve detailed information on the status of payments within a File."
+        },
+        {
+          "info": {
+            "name": "Get a File Payment's Report File",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/file-payments/:FilePaymentId/report-file",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "FilePaymentId",
+                "value": "",
+                "type": "path",
+                "description": "FilePaymentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to download a payment report file from an ASPSP."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "International Payment Consents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create an International Payment Consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/open-banking/v4.0/pisp/international-payment-consents",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-idempotency-key",
+                "value": ""
+              },
+              {
+                "name": "x-jws-signature",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to register an intent to initiate an International Payment."
+        },
+        {
+          "info": {
+            "name": "Get an International Payment Consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/international-payment-consents/:ConsentId",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ConsentId",
+                "value": "",
+                "type": "path",
+                "description": "ConsentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve the status of an intent to initiate an International Payment."
+        },
+        {
+          "info": {
+            "name": "Confirm Funds Availability for an International Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/international-payment-consents/:ConsentId/funds-confirmation",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ConsentId",
+                "value": "",
+                "type": "path",
+                "description": "ConsentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to check whether a PSU has sufficient available funds for an International Payment."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "International Payments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Initiate an International Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/open-banking/v4.0/pisp/international-payments",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-idempotency-key",
+                "value": ""
+              },
+              {
+                "name": "x-jws-signature",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to initiate an already PSU-approved International Payment."
+        },
+        {
+          "info": {
+            "name": "Get an International Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/international-payments/:InternationalPaymentId",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "InternationalPaymentId",
+                "value": "",
+                "type": "path",
+                "description": "InternationalPaymentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve the status of an International Payment."
+        },
+        {
+          "info": {
+            "name": "Get details of an International Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/international-payments/:InternationalPaymentId/payment-details",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "InternationalPaymentId",
+                "value": "",
+                "type": "path",
+                "description": "InternationalPaymentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve detailed information on the status of an International Payment."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "International Scheduled Payments Consents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create an International Scheduled Payment Consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/open-banking/v4.0/pisp/international-scheduled-payment-consents",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-idempotency-key",
+                "value": ""
+              },
+              {
+                "name": "x-jws-signature",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to register an intent to initiate an International Scheduled Payment."
+        },
+        {
+          "info": {
+            "name": "Get an International Scheduled Payment Consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/international-scheduled-payment-consents/:ConsentId",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ConsentId",
+                "value": "",
+                "type": "path",
+                "description": "ConsentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve the status of an intent to initiate an International Scheduled Payment."
+        },
+        {
+          "info": {
+            "name": "Confirm Funds Availability for an International Scheduled Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/international-scheduled-payment-consents/:ConsentId/funds-confirmation",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ConsentId",
+                "value": "",
+                "type": "path",
+                "description": "ConsentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to check whether a PSU has sufficient available funds for an International Scheduled Payment."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "International Scheduled Payments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Initiate an International Scheduled Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/open-banking/v4.0/pisp/international-scheduled-payments",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-idempotency-key",
+                "value": ""
+              },
+              {
+                "name": "x-jws-signature",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to initiate an already PSU-approved International Scheduled Payment."
+        },
+        {
+          "info": {
+            "name": "Get an International Scheduled Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/international-scheduled-payments/:InternationalScheduledPaymentId",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "InternationalScheduledPaymentId",
+                "value": "",
+                "type": "path",
+                "description": "InternationalScheduledPaymentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve the status of an International Scheduled Payment."
+        },
+        {
+          "info": {
+            "name": "Get details of an International Scheduled Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/international-scheduled-payments/:InternationalScheduledPaymentId/payment-details",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "InternationalScheduledPaymentId",
+                "value": "",
+                "type": "path",
+                "description": "InternationalScheduledPaymentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve detailed information on the status of an International Scheduled Payment."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "International Standing Orders Consents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create an International Standing Order Consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/open-banking/v4.0/pisp/international-standing-order-consents",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-idempotency-key",
+                "value": ""
+              },
+              {
+                "name": "x-jws-signature",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to register an intent to initiate an International Standing Order arrangement."
+        },
+        {
+          "info": {
+            "name": "Get an International Standing Order Consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/international-standing-order-consents/:ConsentId",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ConsentId",
+                "value": "",
+                "type": "path",
+                "description": "ConsentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve the status of an intent to initiate an International Standing Order arrangement."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "International Standing Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Submit an International Standing Order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/open-banking/v4.0/pisp/international-standing-orders",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-idempotency-key",
+                "value": ""
+              },
+              {
+                "name": "x-jws-signature",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to submit an International Standing Order payment under an already PSU-approved International Standing Order arrangement."
+        },
+        {
+          "info": {
+            "name": "Get an International Standing Order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/international-standing-orders/:InternationalStandingOrderPaymentId",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "InternationalStandingOrderPaymentId",
+                "value": "",
+                "type": "path",
+                "description": "InternationalStandingOrderPaymentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve the status of an International Standing Order payment."
+        },
+        {
+          "info": {
+            "name": "Get details of an International Standing Order Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/pisp/international-standing-orders/:InternationalStandingOrderPaymentId/payment-details",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "InternationalStandingOrderPaymentId",
+                "value": "",
+                "type": "path",
+                "description": "InternationalStandingOrderPaymentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a PISP to retrieve detailed information on the status of an International Standing Order payment."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

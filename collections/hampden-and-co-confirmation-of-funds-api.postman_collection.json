@@ -1,0 +1,3589 @@
+{
+  "item": [
+    {
+      "id": "a9ac47aa-229b-431e-8a3e-d391c503ccb2",
+      "name": "Funds Confirmation Consents",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6f66ff02-d603-429a-8752-2ed59ddf6b98",
+          "name": "Create a Funds Confirmation Consent",
+          "request": {
+            "name": "Create a Funds Confirmation Consent",
+            "description": {
+              "content": "Enables a CBPII to ask an ASPSP to create a new funds-confirmation-consent resource, by sending a copy of the consent to the ASPSP.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "funds-confirmation-consents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                "key": "x-fapi-auth-date",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                "key": "x-fapi-customer-ip-address",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "An RFC4122 UID used as a correlation id.",
+                "key": "x-fapi-interaction-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Indicates the user-agent that the PSU is using.",
+                "key": "x-customer-user-agent",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                "key": "x-client-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json; charset=utf-8"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "fundsconfirmations"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://authserver.example/token"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Data\": {\n    \"DebtorAccount\": {\n      \"SchemeName\": \"<string>\",\n      \"Identification\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"SecondaryIdentification\": \"<string>\",\n      \"Proxy\": {\n        \"Identification\": \"<string>\",\n        \"Code\": \"<string>\",\n        \"Type\": \"<string>\"\n      }\n    },\n    \"ExpirationDateTime\": \"<dateTime>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "179f69fe-2a24-4900-a3bf-e578ec226099",
+              "name": "Funds Confirmation Consent Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json; charset=utf-8"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Data\": {\n    \"DebtorAccount\": {\n      \"SchemeName\": \"<string>\",\n      \"Identification\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"SecondaryIdentification\": \"<string>\",\n      \"Proxy\": {\n        \"Identification\": \"<string>\",\n        \"Code\": \"<string>\",\n        \"Type\": \"<string>\"\n      }\n    },\n    \"ExpirationDateTime\": \"<dateTime>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "TPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nA non-empty list of Quota Policy Items. The Item value __MUST__ be a String.\n\nExample:\n`RateLimit-Policy: \"default\";q=100;w=10`\n\nThe **REQUIRED** \"q\" parameter indicates the quota allocated by this policy measured in quota units.\n\nThe **OPTIONAL** \"w\" parameter value conveys a time window.\n",
+                  "key": "RateLimit-Policy",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "TPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nA server uses the \"RateLimit\" response header field to communicate the current service limit for a quota policy for a particular partition key.\n\nExample:\n`RateLimit: \"default\";r=50;t=30`\n\nThe **REQUIRED** \"r\" parameter value conveys the remaining quota units for the identified policy.\n\nThe **OPTIONAL** \"t\" parameter value conveys the time window reset time for the identified policy.\n",
+                  "key": "RateLimit",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                }
+              ],
+              "body": "{\n  \"Data\": {\n    \"ConsentId\": \"string\",\n    \"CreationDateTime\": \"2000-06-09T02:49:52.070Z\",\n    \"Status\": \"AWAU\",\n    \"StatusUpdateDateTime\": \"1993-04-17T06:33:46.239Z\",\n    \"DebtorAccount\": {\n      \"SchemeName\": \"string\",\n      \"Identification\": \"string\",\n      \"Name\": \"string\",\n      \"SecondaryIdentification\": \"st\",\n      \"Proxy\": {\n        \"Identification\": \"<string>\",\n        \"Code\": \"<string>\",\n        \"Type\": \"<string>\"\n      }\n    },\n    \"StatusReason\": [\n      {\n        \"StatusReasonCode\": \"ERIN\",\n        \"StatusReasonDescription\": \"string\",\n        \"Path\": \"string\"\n      },\n      {\n        \"StatusReasonCode\": \"ERIN\",\n        \"StatusReasonDescription\": \"string\",\n        \"Path\": \"string\"\n      }\n    ],\n    \"ExpirationDateTime\": \"1966-01-22T13:38:48.353Z\"\n  },\n  \"Links\": {\n    \"Self\": \"http://mzDvcptBVsCtgJoNqV.hgneGfpWk2rI9oLZRfOFzKE\",\n    \"First\": \"http://xhEYSwkAfRsCcDqHAqszCuLZLf.biacxnjEz9wWi.h5Mi1U,sVFsiNwkn3PWH1M9OptlPbBYwsacsL5N95dpf.ycJA\",\n    \"Prev\": \"https://ADLKExEaPIDqn.miw5TWQMNZyKQSIgvebRYH,Jv.dsb\",\n    \"Next\": \"https://yBssGEfClgAM.tajwApEnAXFoSmszyHEFlWJ2XtM9x,u3JbYXpXteGjS-HYK4w.opv4d+YDnpVBgCi0L6y\",\n    \"Last\": \"https://UBgLxTZMNKcJnTYDUbKd.hdEgcPgMcD\"\n  },\n  \"Meta\": {\n    \"TotalPages\": 4849,\n    \"FirstAvailableDateTime\": \"1972-12-18T17:42:06.978Z\",\n    \"LastAvailableDateTime\": \"1980-10-15T22:25:00.368Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cb9f694e-3521-4a3e-ba64-2f34510724dd",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json; charset=utf-8"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Data\": {\n    \"DebtorAccount\": {\n      \"SchemeName\": \"<string>\",\n      \"Identification\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"SecondaryIdentification\": \"<string>\",\n      \"Proxy\": {\n        \"Identification\": \"<string>\",\n        \"Code\": \"<string>\",\n        \"Type\": \"<string>\"\n      }\n    },\n    \"ExpirationDateTime\": \"<dateTime>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                }
+              ],
+              "body": "{\n  \"Errors\": [\n    {\n      \"ErrorCode\": \"U001\",\n      \"Message\": \"string\",\n      \"Path\": \"string\",\n      \"Url\": \"string\"\n    }\n  ],\n  \"Id\": \"string\",\n  \"Code\": \"400 BadRequest\",\n  \"Message\": \"There is something wrong with the request parameters provided\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a847f73d-a099-4aa4-ba99-1c45ef422651",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Data\": {\n    \"DebtorAccount\": {\n      \"SchemeName\": \"<string>\",\n      \"Identification\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"SecondaryIdentification\": \"<string>\",\n      \"Proxy\": {\n        \"Identification\": \"<string>\",\n        \"Code\": \"<string>\",\n        \"Type\": \"<string>\"\n      }\n    },\n    \"ExpirationDateTime\": \"<dateTime>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5995ba64-f876-459e-82dd-7910eb5e8681",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json; charset=utf-8"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Data\": {\n    \"DebtorAccount\": {\n      \"SchemeName\": \"<string>\",\n      \"Identification\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"SecondaryIdentification\": \"<string>\",\n      \"Proxy\": {\n        \"Identification\": \"<string>\",\n        \"Code\": \"<string>\",\n        \"Type\": \"<string>\"\n      }\n    },\n    \"ExpirationDateTime\": \"<dateTime>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                }
+              ],
+              "body": "{\n  \"Errors\": [\n    {\n      \"ErrorCode\": \"U001\",\n      \"Message\": \"string\",\n      \"Path\": \"string\",\n      \"Url\": \"string\"\n    }\n  ],\n  \"Id\": \"string\",\n  \"Code\": \"400 BadRequest\",\n  \"Message\": \"There is something wrong with the request parameters provided\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "15373be6-245f-4deb-b94b-2438d32dc642",
+              "name": "Method Not Allowed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Data\": {\n    \"DebtorAccount\": {\n      \"SchemeName\": \"<string>\",\n      \"Identification\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"SecondaryIdentification\": \"<string>\",\n      \"Proxy\": {\n        \"Identification\": \"<string>\",\n        \"Code\": \"<string>\",\n        \"Type\": \"<string>\"\n      }\n    },\n    \"ExpirationDateTime\": \"<dateTime>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Method Not Allowed",
+              "code": 405,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a4c05ce5-7bd1-47d8-96f8-6ff689e7d936",
+              "name": "Not Acceptable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Data\": {\n    \"DebtorAccount\": {\n      \"SchemeName\": \"<string>\",\n      \"Identification\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"SecondaryIdentification\": \"<string>\",\n      \"Proxy\": {\n        \"Identification\": \"<string>\",\n        \"Code\": \"<string>\",\n        \"Type\": \"<string>\"\n      }\n    },\n    \"ExpirationDateTime\": \"<dateTime>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2970fb2f-01c9-467a-9924-57d722a5d178",
+              "name": "Unsupported Media Type",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Data\": {\n    \"DebtorAccount\": {\n      \"SchemeName\": \"<string>\",\n      \"Identification\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"SecondaryIdentification\": \"<string>\",\n      \"Proxy\": {\n        \"Identification\": \"<string>\",\n        \"Code\": \"<string>\",\n        \"Type\": \"<string>\"\n      }\n    },\n    \"ExpirationDateTime\": \"<dateTime>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "77accdbe-2356-4e58-82c3-0e97605426b0",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Data\": {\n    \"DebtorAccount\": {\n      \"SchemeName\": \"<string>\",\n      \"Identification\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"SecondaryIdentification\": \"<string>\",\n      \"Proxy\": {\n        \"Identification\": \"<string>\",\n        \"Code\": \"<string>\",\n        \"Type\": \"<string>\"\n      }\n    },\n    \"ExpirationDateTime\": \"<dateTime>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Number in seconds to wait",
+                  "key": "Retry-After",
+                  "value": "9617"
+                },
+                {
+                  "disabled": false,
+                  "description": "An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "645cab89-ddb2-4463-b6a5-165b38630e2c",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json; charset=utf-8"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Data\": {\n    \"DebtorAccount\": {\n      \"SchemeName\": \"<string>\",\n      \"Identification\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"SecondaryIdentification\": \"<string>\",\n      \"Proxy\": {\n        \"Identification\": \"<string>\",\n        \"Code\": \"<string>\",\n        \"Type\": \"<string>\"\n      }\n    },\n    \"ExpirationDateTime\": \"<dateTime>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                }
+              ],
+              "body": "{\n  \"Errors\": [\n    {\n      \"ErrorCode\": \"U001\",\n      \"Message\": \"string\",\n      \"Path\": \"string\",\n      \"Url\": \"string\"\n    }\n  ],\n  \"Id\": \"string\",\n  \"Code\": \"400 BadRequest\",\n  \"Message\": \"There is something wrong with the request parameters provided\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c583c370-e53c-48f3-8f21-0c817a2cf8d2",
+          "name": "Get a Funds Confirmation Consent",
+          "request": {
+            "name": "Get a Funds Confirmation Consent",
+            "description": {
+              "content": "Enables a CBPII to retrieve the status of a Funds Confirmation Consent resource.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "funds-confirmation-consents",
+                ":ConsentId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "ConsentId",
+                  "description": "(Required) ConsentId"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                "key": "x-fapi-auth-date",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                "key": "x-fapi-customer-ip-address",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "An RFC4122 UID used as a correlation id.",
+                "key": "x-fapi-interaction-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Indicates the user-agent that the PSU is using.",
+                "key": "x-customer-user-agent",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                "key": "x-client-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json; charset=utf-8"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "fundsconfirmations"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://authserver.example/token"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b92c4463-5322-455f-9149-e11678e376a9",
+              "name": "Funds Confirmation Consent Read",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents",
+                    ":ConsentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ConsentId",
+                      "description": "(Required) ConsentId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json; charset=utf-8"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "TPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nA non-empty list of Quota Policy Items. The Item value __MUST__ be a String.\n\nExample:\n`RateLimit-Policy: \"default\";q=100;w=10`\n\nThe **REQUIRED** \"q\" parameter indicates the quota allocated by this policy measured in quota units.\n\nThe **OPTIONAL** \"w\" parameter value conveys a time window.\n",
+                  "key": "RateLimit-Policy",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "TPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nA server uses the \"RateLimit\" response header field to communicate the current service limit for a quota policy for a particular partition key.\n\nExample:\n`RateLimit: \"default\";r=50;t=30`\n\nThe **REQUIRED** \"r\" parameter value conveys the remaining quota units for the identified policy.\n\nThe **OPTIONAL** \"t\" parameter value conveys the time window reset time for the identified policy.\n",
+                  "key": "RateLimit",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                }
+              ],
+              "body": "{\n  \"Data\": {\n    \"ConsentId\": \"string\",\n    \"CreationDateTime\": \"1968-10-19T08:16:06.907Z\",\n    \"Status\": \"AUTH\",\n    \"StatusUpdateDateTime\": \"1996-10-21T10:21:40.618Z\",\n    \"DebtorAccount\": {\n      \"SchemeName\": \"string\",\n      \"Identification\": \"string\",\n      \"Name\": \"string\",\n      \"SecondaryIdentification\": \"string\",\n      \"Proxy\": {\n        \"Identification\": \"<string>\",\n        \"Code\": \"<string>\",\n        \"Type\": \"<string>\"\n      }\n    },\n    \"StatusReason\": [\n      {\n        \"StatusReasonCode\": \"ERIN\",\n        \"StatusReasonDescription\": \"string\",\n        \"Path\": \"string\"\n      },\n      {\n        \"StatusReasonCode\": \"ERIN\",\n        \"StatusReasonDescription\": \"string\",\n        \"Path\": \"string\"\n      }\n    ],\n    \"ExpirationDateTime\": \"1964-06-30T02:39:22.428Z\"\n  },\n  \"Links\": {\n    \"Self\": \"https://WNuCVCcKIS.weheWYiB9VY\",\n    \"First\": \"http://qdoIgArYXLxHZBRAQxFVfyyUS.ultMIN7ZH-MLFfB4IV-g8bMJ4AvOVYOxVIneD9xluNH22SH17gGFYakGGmVmqe\",\n    \"Prev\": \"http://xTqkvRZR.vcvhT3vtcHVJVYT4agMlAem0QoNQNPZNkSYh.LYXyZ7Vg+Z5HLvsh7ZhRdj\",\n    \"Next\": \"https://hTkQEnPxKw.bvy9,24Ikrq+,\",\n    \"Last\": \"https://ajTeH.nxngHtjNUNOXQpx8R\"\n  },\n  \"Meta\": {\n    \"TotalPages\": 4107,\n    \"FirstAvailableDateTime\": \"1959-09-29T01:00:10.010Z\",\n    \"LastAvailableDateTime\": \"2008-04-19T07:07:34.428Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5064d6d3-8331-4139-aa67-e2ab660894d9",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents",
+                    ":ConsentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ConsentId",
+                      "description": "(Required) ConsentId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json; charset=utf-8"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                }
+              ],
+              "body": "{\n  \"Errors\": [\n    {\n      \"ErrorCode\": \"U001\",\n      \"Message\": \"string\",\n      \"Path\": \"string\",\n      \"Url\": \"string\"\n    }\n  ],\n  \"Id\": \"string\",\n  \"Code\": \"400 BadRequest\",\n  \"Message\": \"There is something wrong with the request parameters provided\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1b1581c4-cc55-480b-af34-fdba11c300c7",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents",
+                    ":ConsentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ConsentId",
+                      "description": "(Required) ConsentId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "054f1b1e-a678-4028-9a48-eb8fd04caddc",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents",
+                    ":ConsentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ConsentId",
+                      "description": "(Required) ConsentId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json; charset=utf-8"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                }
+              ],
+              "body": "{\n  \"Errors\": [\n    {\n      \"ErrorCode\": \"U001\",\n      \"Message\": \"string\",\n      \"Path\": \"string\",\n      \"Url\": \"string\"\n    }\n  ],\n  \"Id\": \"string\",\n  \"Code\": \"400 BadRequest\",\n  \"Message\": \"There is something wrong with the request parameters provided\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7cd2dc3b-96f2-4da0-b03d-43e0868302bc",
+              "name": "Method Not Allowed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents",
+                    ":ConsentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ConsentId",
+                      "description": "(Required) ConsentId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Method Not Allowed",
+              "code": 405,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dec9c830-f82a-4239-98c9-f59b385d190b",
+              "name": "Not Acceptable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents",
+                    ":ConsentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ConsentId",
+                      "description": "(Required) ConsentId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "19657c23-3f5c-4f06-9d82-0ce33e4084ef",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents",
+                    ":ConsentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ConsentId",
+                      "description": "(Required) ConsentId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Number in seconds to wait",
+                  "key": "Retry-After",
+                  "value": "9617"
+                },
+                {
+                  "disabled": false,
+                  "description": "An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6ee0151d-057a-4e35-82cb-b0c6dab27259",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents",
+                    ":ConsentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ConsentId",
+                      "description": "(Required) ConsentId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json; charset=utf-8"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                }
+              ],
+              "body": "{\n  \"Errors\": [\n    {\n      \"ErrorCode\": \"U001\",\n      \"Message\": \"string\",\n      \"Path\": \"string\",\n      \"Url\": \"string\"\n    }\n  ],\n  \"Id\": \"string\",\n  \"Code\": \"400 BadRequest\",\n  \"Message\": \"There is something wrong with the request parameters provided\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "548aa4b1-911c-4277-bddc-943971a1d5c4",
+          "name": "Delete a Funds Confirmation Consent",
+          "request": {
+            "name": "Delete a Funds Confirmation Consent",
+            "description": {
+              "content": "Enables a CBPII to inform the PSU’s ASPSP that the PSU has revoked their consent to provide funds confirmations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "funds-confirmation-consents",
+                ":ConsentId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "ConsentId",
+                  "description": "(Required) ConsentId"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                "key": "x-fapi-auth-date",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                "key": "x-fapi-customer-ip-address",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "An RFC4122 UID used as a correlation id.",
+                "key": "x-fapi-interaction-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Indicates the user-agent that the PSU is using.",
+                "key": "x-customer-user-agent",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                "key": "x-client-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json; charset=utf-8"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "fundsconfirmations"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://authserver.example/token"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3f4c93b5-1f29-450d-a401-211af05b8f3c",
+              "name": "Funds Confirmation Consent Deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents",
+                    ":ConsentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ConsentId",
+                      "description": "(Required) ConsentId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "TPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nA non-empty list of Quota Policy Items. The Item value __MUST__ be a String.\n\nExample:\n`RateLimit-Policy: \"default\";q=100;w=10`\n\nThe **REQUIRED** \"q\" parameter indicates the quota allocated by this policy measured in quota units.\n\nThe **OPTIONAL** \"w\" parameter value conveys a time window.\n",
+                  "key": "RateLimit-Policy",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "TPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nA server uses the \"RateLimit\" response header field to communicate the current service limit for a quota policy for a particular partition key.\n\nExample:\n`RateLimit: \"default\";r=50;t=30`\n\nThe **REQUIRED** \"r\" parameter value conveys the remaining quota units for the identified policy.\n\nThe **OPTIONAL** \"t\" parameter value conveys the time window reset time for the identified policy.\n",
+                  "key": "RateLimit",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "97de238b-4366-4523-8dc3-c0b8bba1e325",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents",
+                    ":ConsentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ConsentId",
+                      "description": "(Required) ConsentId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json; charset=utf-8"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                }
+              ],
+              "body": "{\n  \"Errors\": [\n    {\n      \"ErrorCode\": \"U001\",\n      \"Message\": \"string\",\n      \"Path\": \"string\",\n      \"Url\": \"string\"\n    }\n  ],\n  \"Id\": \"string\",\n  \"Code\": \"400 BadRequest\",\n  \"Message\": \"There is something wrong with the request parameters provided\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "47d8a914-862f-487a-9bac-065105f96bed",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents",
+                    ":ConsentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ConsentId",
+                      "description": "(Required) ConsentId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "12aecf63-3870-4eba-bb4a-7e418863c8ec",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents",
+                    ":ConsentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ConsentId",
+                      "description": "(Required) ConsentId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json; charset=utf-8"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                }
+              ],
+              "body": "{\n  \"Errors\": [\n    {\n      \"ErrorCode\": \"U001\",\n      \"Message\": \"string\",\n      \"Path\": \"string\",\n      \"Url\": \"string\"\n    }\n  ],\n  \"Id\": \"string\",\n  \"Code\": \"400 BadRequest\",\n  \"Message\": \"There is something wrong with the request parameters provided\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "261b9325-cd03-4c52-a014-87ce25bf3f97",
+              "name": "Method Not Allowed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents",
+                    ":ConsentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ConsentId",
+                      "description": "(Required) ConsentId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Method Not Allowed",
+              "code": 405,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "54e90f14-b763-4151-ad22-b282f504ac6f",
+              "name": "Not Acceptable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents",
+                    ":ConsentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ConsentId",
+                      "description": "(Required) ConsentId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1ee04833-1e5e-4f1f-bf1b-aeacbeca232d",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents",
+                    ":ConsentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ConsentId",
+                      "description": "(Required) ConsentId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Number in seconds to wait",
+                  "key": "Retry-After",
+                  "value": "9617"
+                },
+                {
+                  "disabled": false,
+                  "description": "An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8643fc89-c7a6-4be8-8f2b-99f785125a15",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmation-consents",
+                    ":ConsentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ConsentId",
+                      "description": "(Required) ConsentId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json; charset=utf-8"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                }
+              ],
+              "body": "{\n  \"Errors\": [\n    {\n      \"ErrorCode\": \"U001\",\n      \"Message\": \"string\",\n      \"Path\": \"string\",\n      \"Url\": \"string\"\n    }\n  ],\n  \"Id\": \"string\",\n  \"Code\": \"400 BadRequest\",\n  \"Message\": \"There is something wrong with the request parameters provided\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "1db6c947-d2ec-4e75-8fd7-53224af4e9cc",
+      "name": "Funds Confirmations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2dddfef7-330e-4bfe-b7b7-cc81314653c9",
+          "name": "Create a Funds Confirmation Request",
+          "request": {
+            "name": "Create a Funds Confirmation Request",
+            "description": {
+              "content": "Enables a CBPII to check whether a PSU has sufficient available funds for a CBPII transaction.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "funds-confirmations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                "key": "x-fapi-auth-date",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                "key": "x-fapi-customer-ip-address",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "An RFC4122 UID used as a correlation id.",
+                "key": "x-fapi-interaction-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Indicates the user-agent that the PSU is using.",
+                "key": "x-customer-user-agent",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                "key": "x-client-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json; charset=utf-8"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "fundsconfirmations"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://authserver.example/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://authserver.example/authorization"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Data\": {\n    \"ConsentId\": \"<string>\",\n    \"Reference\": \"<string>\",\n    \"InstructedAmount\": {\n      \"Amount\": \"<string>\",\n      \"Currency\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dcdb200e-9ce7-4e6e-aa47-b27ac02c0767",
+              "name": "Funds Confirmation Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json; charset=utf-8"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Data\": {\n    \"ConsentId\": \"<string>\",\n    \"Reference\": \"<string>\",\n    \"InstructedAmount\": {\n      \"Amount\": \"<string>\",\n      \"Currency\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "TPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nA non-empty list of Quota Policy Items. The Item value __MUST__ be a String.\n\nExample:\n`RateLimit-Policy: \"default\";q=100;w=10`\n\nThe **REQUIRED** \"q\" parameter indicates the quota allocated by this policy measured in quota units.\n\nThe **OPTIONAL** \"w\" parameter value conveys a time window.\n",
+                  "key": "RateLimit-Policy",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "TPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nA server uses the \"RateLimit\" response header field to communicate the current service limit for a quota policy for a particular partition key.\n\nExample:\n`RateLimit: \"default\";r=50;t=30`\n\nThe **REQUIRED** \"r\" parameter value conveys the remaining quota units for the identified policy.\n\nThe **OPTIONAL** \"t\" parameter value conveys the time window reset time for the identified policy.\n",
+                  "key": "RateLimit",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                }
+              ],
+              "body": "{\n  \"Data\": {\n    \"FundsConfirmationId\": \"string\",\n    \"ConsentId\": \"string\",\n    \"CreationDateTime\": \"2015-05-29T15:28:22.532Z\",\n    \"FundsAvailable\": true,\n    \"Reference\": \"string\",\n    \"InstructedAmount\": {\n      \"Amount\": \"396\",\n      \"Currency\": \"DYN\"\n    }\n  },\n  \"Links\": {\n    \"Self\": \"https://cdCOxuLmNbrCVCatJoYcDDUAc.pqrqVuj0Qa0n,lGMn+XZ1MJ1CcbdXLQ72n93Yg+Wkus5uSMTv\",\n    \"First\": \"http://MuxIBAsqsUlgZF.nwhPKaFZnft9.IvkR.oDHb0S,o.GCi0fCb0CuxeMTvMc9\",\n    \"Prev\": \"http://zjvWfTspRZOWTE.heUpgHx3lD9yl64lXGh46NNTRm7D0U,UU8.ErrAwb1,D6yCdxpHPz3kwjiiLCIzhydDT.g,axcsmAQF\",\n    \"Next\": \"https://KepqWo.wonmY-nlFPileWImykMQIUiadm,iHLp+xFncF7A1SvV3\",\n    \"Last\": \"http://SpoCCjbHQdKXLatELCSdWsxckf.csuKJDiwfPXk9VB,ROFWajJEVUDi\"\n  },\n  \"Meta\": {\n    \"TotalPages\": 3545,\n    \"FirstAvailableDateTime\": \"1980-03-21T08:54:56.659Z\",\n    \"LastAvailableDateTime\": \"1958-10-13T18:34:43.324Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1f9c709c-1dc2-4c70-94bf-f04e7ef88d8b",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json; charset=utf-8"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Data\": {\n    \"ConsentId\": \"<string>\",\n    \"Reference\": \"<string>\",\n    \"InstructedAmount\": {\n      \"Amount\": \"<string>\",\n      \"Currency\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                }
+              ],
+              "body": "{\n  \"Errors\": [\n    {\n      \"ErrorCode\": \"U001\",\n      \"Message\": \"string\",\n      \"Path\": \"string\",\n      \"Url\": \"string\"\n    }\n  ],\n  \"Id\": \"string\",\n  \"Code\": \"400 BadRequest\",\n  \"Message\": \"There is something wrong with the request parameters provided\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "169fe9e6-aeaa-478e-8966-3885a77c5a38",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Data\": {\n    \"ConsentId\": \"<string>\",\n    \"Reference\": \"<string>\",\n    \"InstructedAmount\": {\n      \"Amount\": \"<string>\",\n      \"Currency\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7e681b24-feca-41bd-8763-d3f244bc5dee",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json; charset=utf-8"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Data\": {\n    \"ConsentId\": \"<string>\",\n    \"Reference\": \"<string>\",\n    \"InstructedAmount\": {\n      \"Amount\": \"<string>\",\n      \"Currency\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                }
+              ],
+              "body": "{\n  \"Errors\": [\n    {\n      \"ErrorCode\": \"U001\",\n      \"Message\": \"string\",\n      \"Path\": \"string\",\n      \"Url\": \"string\"\n    }\n  ],\n  \"Id\": \"string\",\n  \"Code\": \"400 BadRequest\",\n  \"Message\": \"There is something wrong with the request parameters provided\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5e171fd7-7923-4707-abaa-ea0864c09079",
+              "name": "Method Not Allowed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Data\": {\n    \"ConsentId\": \"<string>\",\n    \"Reference\": \"<string>\",\n    \"InstructedAmount\": {\n      \"Amount\": \"<string>\",\n      \"Currency\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Method Not Allowed",
+              "code": 405,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0221cd38-d2cf-4476-ac6a-09e3a591f157",
+              "name": "Not Acceptable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Data\": {\n    \"ConsentId\": \"<string>\",\n    \"Reference\": \"<string>\",\n    \"InstructedAmount\": {\n      \"Amount\": \"<string>\",\n      \"Currency\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "52b24d5a-092d-4d85-a2dc-4b5440931b26",
+              "name": "Unsupported Media Type",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Data\": {\n    \"ConsentId\": \"<string>\",\n    \"Reference\": \"<string>\",\n    \"InstructedAmount\": {\n      \"Amount\": \"<string>\",\n      \"Currency\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "95d72341-2cb4-47dc-982e-e6c940390f87",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Data\": {\n    \"ConsentId\": \"<string>\",\n    \"Reference\": \"<string>\",\n    \"InstructedAmount\": {\n      \"Amount\": \"<string>\",\n      \"Currency\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Number in seconds to wait",
+                  "key": "Retry-After",
+                  "value": "9617"
+                },
+                {
+                  "disabled": false,
+                  "description": "An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cf9be35c-66ad-417e-8a9f-3ec41d78116f",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "funds-confirmations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The time when the PSU last logged in with the TPP. \nAll dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: \nSun, 10 Sep 2017 19:43:31 UTC",
+                    "key": "x-fapi-auth-date",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+                    "key": "x-fapi-customer-ip-address",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "An RFC4122 UID used as a correlation id.",
+                    "key": "x-fapi-interaction-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) An Authorisation Token as per https://tools.ietf.org/html/rfc6750",
+                    "key": "Authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the user-agent that the PSU is using.",
+                    "key": "x-customer-user-agent",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Only used if an ASPSP requires the client ID in order to return rate limit headers. \n\nTPPs __must__ refer to ASPSP developer portals for further information on any rate limit policies, if the headers are supported and any additional requirements.\n\nThis header __must not__ be used for client authentication\n",
+                    "key": "x-client-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json; charset=utf-8"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Data\": {\n    \"ConsentId\": \"<string>\",\n    \"Reference\": \"<string>\",\n    \"InstructedAmount\": {\n      \"Amount\": \"<string>\",\n      \"Currency\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) An RFC4122 UID used as a correlation id.",
+                  "key": "x-fapi-interaction-id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                }
+              ],
+              "body": "{\n  \"Errors\": [\n    {\n      \"ErrorCode\": \"U001\",\n      \"Message\": \"string\",\n      \"Path\": \"string\",\n      \"Url\": \"string\"\n    }\n  ],\n  \"Id\": \"string\",\n  \"Code\": \"400 BadRequest\",\n  \"Message\": \"There is something wrong with the request parameters provided\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/open-banking/v4.0/cbpii",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d53edb5e-0ae4-4837-b34c-81b7b44723be",
+    "name": "Confirmation of Funds API Specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Swagger for Confirmation of Funds API Specification.\n\n**Please Note**: There are no optional fields, if a field is not marked as “Required” it is a Conditional field.\n\n\nContact Support:\n Name: Service Desk\n Email: ServiceDesk@openbanking.org.uk",
+      "type": "text/plain"
+    }
+  }
+}

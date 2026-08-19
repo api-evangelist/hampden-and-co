@@ -1,0 +1,1676 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Account and Transaction API Specification",
+    "version": "4.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Account Access Consents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create an Account Access Consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/open-banking/v4.0/aisp/account-access-consents",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to ask an ASPSP to create a new account-access-consent resource, by sending a copy of the consent to the ASPSP."
+        },
+        {
+          "info": {
+            "name": "Get an Account Access Consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/account-access-consents/:ConsentId",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ConsentId",
+                "value": "",
+                "type": "path",
+                "description": "ConsentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve the status of an AIS consent."
+        },
+        {
+          "info": {
+            "name": "Delete an Account Access Consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/open-banking/v4.0/aisp/account-access-consents/:ConsentId",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ConsentId",
+                "value": "",
+                "type": "path",
+                "description": "ConsentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to inform the ASPSP that the PSU has revoked their consent."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/accounts",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve a list of a PSU's accounts and information about those account(s) that the PSU has consented to."
+        },
+        {
+          "info": {
+            "name": "Get an Account by AccountId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/accounts/:AccountId",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "AccountId",
+                "value": "",
+                "type": "path",
+                "description": "AccountId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve information about a specific PSU account."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Balances",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Balances for an AccountId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/accounts/:AccountId/balances",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "AccountId",
+                "value": "",
+                "type": "path",
+                "description": "AccountId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve account balance information for a specific PSU account."
+        },
+        {
+          "info": {
+            "name": "Get Balances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/balances",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve balance information for account(s) that the PSU has consented to."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Beneficiaries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Beneficiaries for an AccountId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/accounts/:AccountId/beneficiaries",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "AccountId",
+                "value": "",
+                "type": "path",
+                "description": "AccountId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve Beneficiary information for a specific PSU account."
+        },
+        {
+          "info": {
+            "name": "Get Beneficiaries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/beneficiaries",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve Beneficiary information for account(s) that the PSU has consented to."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Direct Debits",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Direct Debits for an AccountId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/accounts/:AccountId/direct-debits",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "AccountId",
+                "value": "",
+                "type": "path",
+                "description": "AccountId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve Direct Debit information for a specific PSU account."
+        },
+        {
+          "info": {
+            "name": "Get Direct Debits",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/direct-debits",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve Direct Debit information for account(s) that the PSU has consented to."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Offers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Offers for an AccountId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/accounts/:AccountId/offers",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "AccountId",
+                "value": "",
+                "type": "path",
+                "description": "AccountId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve any offer information for a specific PSU account."
+        },
+        {
+          "info": {
+            "name": "Get Offers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/offers",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve any offer information for account(s) that the PSU has consented to."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Parties",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Parties for an AccountId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/accounts/:AccountId/parties",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "AccountId",
+                "value": "",
+                "type": "path",
+                "description": "AccountId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve details about the PSU account-holder(s)/operator(s)."
+        },
+        {
+          "info": {
+            "name": "Get Party for an AccountId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/accounts/:AccountId/party",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "AccountId",
+                "value": "",
+                "type": "path",
+                "description": "AccountId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve details about the party that gave permission to the AISP to view a specific PSU account."
+        },
+        {
+          "info": {
+            "name": "Get Party",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/party",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Retrieve details about the party that gave permission to the AISP to view an account(s)."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Products",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Product for an AccountId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/accounts/:AccountId/product",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "AccountId",
+                "value": "",
+                "type": "path",
+                "description": "AccountId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve the account product information for a specific PSU account."
+        },
+        {
+          "info": {
+            "name": "Get Products",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/products",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve the account product information for account(s) that the PSU has consented to."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Scheduled Payments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Scheduled Payments for an AccountId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/accounts/:AccountId/scheduled-payments",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "AccountId",
+                "value": "",
+                "type": "path",
+                "description": "AccountId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve Scheduled Payment information for a specific PSU account."
+        },
+        {
+          "info": {
+            "name": "Get Scheduled Payments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/scheduled-payments",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve Scheduled Payment information for account(s) that the PSU has consented to."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Standing Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Standing Orders for an AccountId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/accounts/:AccountId/standing-orders",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "AccountId",
+                "value": "",
+                "type": "path",
+                "description": "AccountId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve Standing Order information for a specific PSU account."
+        },
+        {
+          "info": {
+            "name": "Get Standing Orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/standing-orders",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve Standing Order information for account(s) that the PSU has consented to."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Statements",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Statements for an AccountId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/accounts/:AccountId/statements",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "AccountId",
+                "value": "",
+                "type": "path",
+                "description": "AccountId"
+              },
+              {
+                "name": "fromStatementDateTime",
+                "value": "",
+                "type": "query",
+                "description": "The UTC ISO 8601 Date Time to filter statements FROM.\n\nNote: Time component is optional - set to 00:00:00 for just Date.\n\nThe value **must not** include the timezone component.\n"
+              },
+              {
+                "name": "toStatementDateTime",
+                "value": "",
+                "type": "query",
+                "description": "The UTC ISO 8601 Date Time to filter statements TO.\n\nNote: Time component is optional - set to 00:00:00 for just Date.\n\nThe value **must not** include the timezone component.\n"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve statement information for a specific PSU account."
+        },
+        {
+          "info": {
+            "name": "Get Statement by StatementId for an AccountId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/accounts/:AccountId/statements/:StatementId",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "StatementId",
+                "value": "",
+                "type": "path",
+                "description": "StatementId"
+              },
+              {
+                "name": "AccountId",
+                "value": "",
+                "type": "path",
+                "description": "AccountId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve the statement information resource for a specific statement."
+        },
+        {
+          "info": {
+            "name": "Get Statement file by StatementId for an AccountId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/accounts/:AccountId/statements/:StatementId/file",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "StatementId",
+                "value": "",
+                "type": "path",
+                "description": "StatementId"
+              },
+              {
+                "name": "AccountId",
+                "value": "",
+                "type": "path",
+                "description": "AccountId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve a non-json representation of a specific statement."
+        },
+        {
+          "info": {
+            "name": "Get Statement Transactions for an AccountId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/accounts/:AccountId/statements/:StatementId/transactions",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "StatementId",
+                "value": "",
+                "type": "path",
+                "description": "StatementId"
+              },
+              {
+                "name": "AccountId",
+                "value": "",
+                "type": "path",
+                "description": "AccountId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve transactions that appear on a selected statement for a specific PSU account."
+        },
+        {
+          "info": {
+            "name": "Get Statements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/statements",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "fromStatementDateTime",
+                "value": "",
+                "type": "query",
+                "description": "The UTC ISO 8601 Date Time to filter statements FROM.\n\nNote: Time component is optional - set to 00:00:00 for just Date.\n\nThe value **must not** include the timezone component.\n"
+              },
+              {
+                "name": "toStatementDateTime",
+                "value": "",
+                "type": "query",
+                "description": "The UTC ISO 8601 Date Time to filter statements TO.\n\nNote: Time component is optional - set to 00:00:00 for just Date.\n\nThe value **must not** include the timezone component.\n"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve statement information for account(s) that the PSU has consented to."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Transactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Transactions for an AccountId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/accounts/:AccountId/transactions",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "AccountId",
+                "value": "",
+                "type": "path",
+                "description": "AccountId"
+              },
+              {
+                "name": "fromBookingDateTime",
+                "value": "",
+                "type": "query",
+                "description": "The UTC ISO 8601 Date Time to filter transactions FROM.\n\nNote: Time component is optional - set to 00:00:00 for just Date.\n\nThe value **must not** include the timezone component.\n"
+              },
+              {
+                "name": "toBookingDateTime",
+                "value": "",
+                "type": "query",
+                "description": "The UTC ISO 8601 Date Time to filter transactions TO.\n\nNote: Time component is optional - set to 00:00:00 for just Date.\n\nThe value **must not** include the timezone component.\n"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve transaction information for a specific PSU account."
+        },
+        {
+          "info": {
+            "name": "Get Transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/aisp/transactions",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "fromBookingDateTime",
+                "value": "",
+                "type": "query",
+                "description": "The UTC ISO 8601 Date Time to filter transactions FROM.\n\nNote: Time component is optional - set to 00:00:00 for just Date.\n\nThe value **must not** include the timezone component.\n"
+              },
+              {
+                "name": "toBookingDateTime",
+                "value": "",
+                "type": "query",
+                "description": "The UTC ISO 8601 Date Time to filter transactions TO.\n\nNote: Time component is optional - set to 00:00:00 for just Date.\n\nThe value **must not** include the timezone component.\n"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables an AISP to retrieve transaction information for account(s) that the PSU has consented to."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,41 +1,45 @@
 generated: '2026-07-23'
 method: derived
 status: candidate
-note: >-
-  No official hosted MCP server was found for Hampden & Co. This is a CANDIDATE
-  tool surface derived from the read (AIS) and confirmation-of-funds operations of
-  the OBIE Read/Write v4.0.1 specs the bank conforms to. Any real deployment would
-  be FAPI/mTLS-gated behind OBIE/eIDAS certificates; input schemas are inherited
-  from the backing OpenAPI operations named in source_operation.
+note: No official hosted MCP server was found for Hampden & Co. This is a CANDIDATE tool surface derived
+  from the read (AIS) and confirmation-of-funds operations of the OBIE Read/Write v4.0.1 specs the bank
+  conforms to. Any real deployment would be FAPI/mTLS-gated behind OBIE/eIDAS certificates; input schemas
+  are inherited from the backing OpenAPI operations named in source_operation.
 server:
   name: hampden-and-co
   transport: http
   url: null
 tools:
-  - name: list_accounts
-    description: List accounts the AISP is consented to access.
-    source_operation: openapi/hampden-and-co-account-information-api-openapi.yml#GetAccounts
-  - name: get_account
-    description: Retrieve a single account by AccountId.
-    source_operation: openapi/hampden-and-co-account-information-api-openapi.yml#GetAccountsAccountId
-  - name: get_account_balances
-    description: Retrieve balances for an account.
-    source_operation: openapi/hampden-and-co-account-information-api-openapi.yml#GetAccountsAccountIdBalances
-  - name: get_account_transactions
-    description: Retrieve transactions for an account within a date window.
-    source_operation: openapi/hampden-and-co-account-information-api-openapi.yml#GetAccountsAccountIdTransactions
-  - name: get_account_beneficiaries
-    description: Retrieve saved beneficiaries for an account.
-    source_operation: openapi/hampden-and-co-account-information-api-openapi.yml#GetAccountsAccountIdBeneficiaries
-  - name: get_account_standing_orders
-    description: Retrieve standing orders for an account.
-    source_operation: openapi/hampden-and-co-account-information-api-openapi.yml#GetAccountsAccountIdStandingOrders
-  - name: get_account_statements
-    description: Retrieve statements for an account.
-    source_operation: openapi/hampden-and-co-account-information-api-openapi.yml#GetAccountsAccountIdStatements
-  - name: create_account_access_consent
-    description: Create an account-access-consent (AISP consent).
-    source_operation: openapi/hampden-and-co-account-information-api-openapi.yml#CreateAccountAccessConsents
-  - name: confirm_funds
-    description: Confirm availability of funds for a consented CBPII.
-    source_operation: openapi/hampden-and-co-confirmation-of-funds-api-openapi.yml#CreateFundsConfirmations
+- name: list_accounts
+  description: List accounts the AISP is consented to access.
+  source_operation: openapi/hampden-and-co-account-information-api-openapi.yml#GetAccounts
+- name: get_account
+  description: Retrieve a single account by AccountId.
+  source_operation: openapi/hampden-and-co-account-information-api-openapi.yml#GetAccountsAccountId
+- name: get_account_balances
+  description: Retrieve balances for an account.
+  source_operation: openapi/hampden-and-co-account-information-api-openapi.yml#GetAccountsAccountIdBalances
+- name: get_account_transactions
+  description: Retrieve transactions for an account within a date window.
+  source_operation: openapi/hampden-and-co-account-information-api-openapi.yml#GetAccountsAccountIdTransactions
+- name: get_account_beneficiaries
+  description: Retrieve saved beneficiaries for an account.
+  source_operation: openapi/hampden-and-co-account-information-api-openapi.yml#GetAccountsAccountIdBeneficiaries
+- name: get_account_standing_orders
+  description: Retrieve standing orders for an account.
+  source_operation: openapi/hampden-and-co-account-information-api-openapi.yml#GetAccountsAccountIdStandingOrders
+- name: get_account_statements
+  description: Retrieve statements for an account.
+  source_operation: openapi/hampden-and-co-account-information-api-openapi.yml#GetAccountsAccountIdStatements
+- name: create_account_access_consent
+  description: Create an account-access-consent (AISP consent).
+  source_operation: openapi/hampden-and-co-account-information-api-openapi.yml#CreateAccountAccessConsents
+- name: confirm_funds
+  description: Confirm availability of funds for a consented CBPII.
+  source_operation: openapi/hampden-and-co-confirmation-of-funds-api-openapi.yml#CreateFundsConfirmations
+deployment:
+  mode: none
+  verified: derived
+  tools: 9
+  checked: '2026-08-12'
+  source: catalog MCP census

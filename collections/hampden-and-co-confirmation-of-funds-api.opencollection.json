@@ -1,0 +1,235 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Confirmation of Funds API Specification",
+    "version": "4.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Funds Confirmation Consents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a Funds Confirmation Consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/open-banking/v4.0/cbpii/funds-confirmation-consents",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a CBPII to ask an ASPSP to create a new funds-confirmation-consent resource, by sending a copy of the consent to the ASPSP."
+        },
+        {
+          "info": {
+            "name": "Get a Funds Confirmation Consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/open-banking/v4.0/cbpii/funds-confirmation-consents/:ConsentId",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ConsentId",
+                "value": "",
+                "type": "path",
+                "description": "ConsentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a CBPII to retrieve the status of a Funds Confirmation Consent resource."
+        },
+        {
+          "info": {
+            "name": "Delete a Funds Confirmation Consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/open-banking/v4.0/cbpii/funds-confirmation-consents/:ConsentId",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ConsentId",
+                "value": "",
+                "type": "path",
+                "description": "ConsentId"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a CBPII to inform the PSU’s ASPSP that the PSU has revoked their consent to provide funds confirmations."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Funds Confirmations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a Funds Confirmation Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/open-banking/v4.0/cbpii/funds-confirmations",
+            "headers": [
+              {
+                "name": "x-fapi-auth-date",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-customer-ip-address",
+                "value": ""
+              },
+              {
+                "name": "x-fapi-interaction-id",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              },
+              {
+                "name": "x-customer-user-agent",
+                "value": ""
+              },
+              {
+                "name": "x-client-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://authserver.example/authorization",
+              "accessTokenUrl": "https://authserver.example/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Enables a CBPII to check whether a PSU has sufficient available funds for a CBPII transaction."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
