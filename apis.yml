@@ -61,12 +61,12 @@ specificationVersion: '0.23'
 apis:
 - aid: hampden-and-co:hampden-and-co-open-data-api
   name: Hampden & Co Open Data API
-  description: Public, unauthenticated Open Data reference API conforming to the OBIE
-    UK Open Banking Open Data standard (product reference data such as personal and
-    business current accounts). Listed on Hampden & Co's Open Banking register entry;
-    a live Open Data endpoint could not be independently confirmed at bootstrap (the
-    developer portal is a single-page app that returns HTML for all paths), so the
-    surface is represented from documentation rather than a verified base URL.
+  description: >-
+    Public, unauthenticated Open Data reference API conforming to the OBIE UK Open Banking Open Data standard
+    (product reference data such as personal and business current accounts). Listed on Hampden & Co's
+    Open Banking register entry; a live Open Data endpoint could not be independently confirmed at bootstrap
+    (the developer portal is a single-page app that returns HTML for all paths), so the surface is represented
+    from documentation rather than a verified base URL.
   humanURL: https://developer-sandbox.hampdendigital.com/
   baseURL: https://developer-sandbox.hampdendigital.com
   tags:
@@ -77,69 +77,469 @@ apis:
     url: https://developer-sandbox.hampdendigital.com/home
   - type: Registration
     url: https://www.openbanking.org.uk/regulated-providers/hampden-co-plc/
-- aid: hampden-and-co:hampden-and-co-account-information-api
-  name: Hampden & Co Account & Transaction Information API
-  description: OBIE Read/Write Account Information Service (AIS) - accounts, balances,
-    transactions, beneficiaries, standing orders, direct debits, statements, and
-    parties - as a FAPI-secured PSD2 dedicated interface. The harvested OpenAPI is the
-    shared OBIE Read/Write standard (v4.0.1), not a Hampden-proprietary contract;
-    production access requires TPP onboarding with eIDAS/OBIE certificates.
+- aid: hampden-and-co:hampden-and-co-account-access-consents-api
+  name: Hampden & Co Account Access Consents API
+  description: >-
+    The Account Access Consents API from Hampden & Co — 2 operation(s) for account access consents.
   humanURL: https://developer-sandbox.hampdendigital.com/
   baseURL: https://developer-sandbox.hampdendigital.com
   tags:
-  - Account Information
-  - AIS
+  - Account Access Consents
   properties:
   - type: OpenAPI
-    url: openapi/hampden-and-co-account-information-api-openapi.yml
-  - type: Overlay
-    url: overlays/hampden-and-co-account-information-api-overlay.yaml
+    url: openapi/hampden-and-co-account-access-consents-api-openapi.yml
   - type: Documentation
     url: https://developer-sandbox.hampdendigital.com/home
   - type: APIReference
     url: https://standards.openbanking.org.uk/api-specifications/latest/
   - type: Registration
     url: https://www.hampdenbank.com/tpp-registration
-- aid: hampden-and-co:hampden-and-co-payment-initiation-api
-  name: Hampden & Co Payment Initiation API
-  description: OBIE Read/Write Payment Initiation Service (PIS) - domestic, scheduled,
-    standing-order, international, and file payments - as a FAPI-secured PSD2 dedicated
-    interface. The harvested OpenAPI is the shared OBIE Read/Write standard (v4.0.1),
-    not a Hampden-proprietary contract; production access requires TPP onboarding with
-    eIDAS/OBIE certificates and PSD2 strong customer authentication.
+- aid: hampden-and-co:hampden-and-co-accounts-api
+  name: Hampden & Co Accounts API
+  description: The Accounts API from Hampden & Co — 2 operation(s) for accounts.
   humanURL: https://developer-sandbox.hampdendigital.com/
   baseURL: https://developer-sandbox.hampdendigital.com
   tags:
-  - Payment Initiation
-  - PIS
+  - Accounts
   properties:
   - type: OpenAPI
-    url: openapi/hampden-and-co-payment-initiation-api-openapi.yml
-  - type: Overlay
-    url: overlays/hampden-and-co-payment-initiation-api-overlay.yaml
+    url: openapi/hampden-and-co-accounts-api-openapi.yml
   - type: Documentation
     url: https://developer-sandbox.hampdendigital.com/home
   - type: APIReference
     url: https://standards.openbanking.org.uk/api-specifications/latest/
   - type: Registration
     url: https://www.hampdenbank.com/tpp-registration
-- aid: hampden-and-co:hampden-and-co-confirmation-of-funds-api
-  name: Hampden & Co Confirmation of Funds API
-  description: OBIE Read/Write Confirmation of Funds Service (CBPII) allowing an
-    authorised card-based payment instrument issuer to confirm the availability of
-    funds, as a FAPI-secured PSD2 dedicated interface. The harvested OpenAPI is the
-    shared OBIE Read/Write standard (v4.0.1), not a Hampden-proprietary contract;
-    production access requires TPP onboarding with eIDAS/OBIE certificates.
+- aid: hampden-and-co:hampden-and-co-balances-api
+  name: Hampden & Co Balances API
+  description: The Balances API from Hampden & Co — 2 operation(s) for balances.
   humanURL: https://developer-sandbox.hampdendigital.com/
   baseURL: https://developer-sandbox.hampdendigital.com
   tags:
-  - Confirmation of Funds
-  - CBPII
+  - Balances
   properties:
   - type: OpenAPI
-    url: openapi/hampden-and-co-confirmation-of-funds-api-openapi.yml
-  - type: Overlay
-    url: overlays/hampden-and-co-confirmation-of-funds-api-overlay.yaml
+    url: openapi/hampden-and-co-balances-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-beneficiaries-api
+  name: Hampden & Co Beneficiaries API
+  description: The Beneficiaries API from Hampden & Co — 2 operation(s) for beneficiaries.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Beneficiaries
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-beneficiaries-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-direct-debits-api
+  name: Hampden & Co Direct Debits API
+  description: The Direct Debits API from Hampden & Co — 2 operation(s) for direct debits.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Direct Debits
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-direct-debits-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-domestic-payment-consents-api
+  name: Hampden & Co Domestic Payment Consents API
+  description: >-
+    The Domestic Payment Consents API from Hampden & Co — 3 operation(s) for domestic payment consents.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Domestic Payment Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-domestic-payment-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-domestic-payments-api
+  name: Hampden & Co Domestic Payments API
+  description: The Domestic Payments API from Hampden & Co — 3 operation(s) for domestic payments.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Domestic Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-domestic-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-domestic-scheduled-payment-consents-api
+  name: Hampden & Co Domestic Scheduled Payment Consents API
+  description: >-
+    The Domestic Scheduled Payment Consents API from Hampden & Co — 2 operation(s) for domestic scheduled
+    payment consents.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Domestic Scheduled Payment Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-domestic-scheduled-payment-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-domestic-scheduled-payments-api
+  name: Hampden & Co Domestic Scheduled Payments API
+  description: >-
+    The Domestic Scheduled Payments API from Hampden & Co — 3 operation(s) for domestic scheduled payments.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Domestic Scheduled Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-domestic-scheduled-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-domestic-standing-order-consents-api
+  name: Hampden & Co Domestic Standing Order Consents API
+  description: >-
+    The Domestic Standing Order Consents API from Hampden & Co — 2 operation(s) for domestic standing
+    order consents.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Domestic Standing Order Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-domestic-standing-order-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-domestic-standing-orders-api
+  name: Hampden & Co Domestic Standing Orders API
+  description: >-
+    The Domestic Standing Orders API from Hampden & Co — 3 operation(s) for domestic standing orders.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Domestic Standing Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-domestic-standing-orders-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-file-payment-consents-api
+  name: Hampden & Co File Payment Consents API
+  description: >-
+    The File Payment Consents API from Hampden & Co — 3 operation(s) for file payment consents.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - File Payment Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-file-payment-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-file-payments-api
+  name: Hampden & Co File Payments API
+  description: The File Payments API from Hampden & Co — 4 operation(s) for file payments.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - File Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-file-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-funds-confirmation-consents-api
+  name: Hampden & Co Funds Confirmation Consents API
+  description: >-
+    The Funds Confirmation Consents API from Hampden & Co — 2 operation(s) for funds confirmation consents.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Funds Confirmation Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-funds-confirmation-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-funds-confirmations-api
+  name: Hampden & Co Funds Confirmations API
+  description: The Funds Confirmations API from Hampden & Co — 1 operation(s) for funds confirmations.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Funds Confirmations
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-funds-confirmations-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-international-payment-consents-api
+  name: Hampden & Co International Payment Consents API
+  description: >-
+    The International Payment Consents API from Hampden & Co — 3 operation(s) for international payment
+    consents.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - International Payment Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-international-payment-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-international-payments-api
+  name: Hampden & Co International Payments API
+  description: >-
+    The International Payments API from Hampden & Co — 3 operation(s) for international payments.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - International Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-international-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-international-scheduled-payments-api
+  name: Hampden & Co International Scheduled Payments API
+  description: >-
+    The International Scheduled Payments API from Hampden & Co — 3 operation(s) for international scheduled
+    payments.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - International Scheduled Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-international-scheduled-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-international-scheduled-payments-consents-api
+  name: Hampden & Co International Scheduled Payments Consents API
+  description: >-
+    The International Scheduled Payments Consents API from Hampden & Co — 3 operation(s) for international
+    scheduled payments consents.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - International Scheduled Payments Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-international-scheduled-payments-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-international-standing-orders-api
+  name: Hampden & Co International Standing Orders API
+  description: >-
+    The International Standing Orders API from Hampden & Co — 3 operation(s) for international standing
+    orders.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - International Standing Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-international-standing-orders-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-international-standing-orders-consents-api
+  name: Hampden & Co International Standing Orders Consents API
+  description: >-
+    The International Standing Orders Consents API from Hampden & Co — 2 operation(s) for international
+    standing orders consents.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - International Standing Orders Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-international-standing-orders-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-offers-api
+  name: Hampden & Co Offers API
+  description: The Offers API from Hampden & Co — 2 operation(s) for offers.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Offers
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-offers-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-parties-api
+  name: Hampden & Co Parties API
+  description: The Parties API from Hampden & Co — 3 operation(s) for parties.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Parties
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-parties-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-products-api
+  name: Hampden & Co Products API
+  description: The Products API from Hampden & Co — 2 operation(s) for products.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Products
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-products-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-scheduled-payments-api
+  name: Hampden & Co Scheduled Payments API
+  description: The Scheduled Payments API from Hampden & Co — 2 operation(s) for scheduled payments.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Scheduled Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-scheduled-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-standing-orders-api
+  name: Hampden & Co Standing Orders API
+  description: The Standing Orders API from Hampden & Co — 2 operation(s) for standing orders.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Standing Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-standing-orders-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-statements-api
+  name: Hampden & Co Statements API
+  description: The Statements API from Hampden & Co — 5 operation(s) for statements.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Statements
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-statements-api-openapi.yml
+  - type: Documentation
+    url: https://developer-sandbox.hampdendigital.com/home
+  - type: APIReference
+    url: https://standards.openbanking.org.uk/api-specifications/latest/
+  - type: Registration
+    url: https://www.hampdenbank.com/tpp-registration
+- aid: hampden-and-co:hampden-and-co-transactions-api
+  name: Hampden & Co Transactions API
+  description: The Transactions API from Hampden & Co — 2 operation(s) for transactions.
+  humanURL: https://developer-sandbox.hampdendigital.com/
+  baseURL: https://developer-sandbox.hampdendigital.com
+  tags:
+  - Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/hampden-and-co-transactions-api-openapi.yml
   - type: Documentation
     url: https://developer-sandbox.hampdendigital.com/home
   - type: APIReference
@@ -147,6 +547,12 @@ apis:
   - type: Registration
     url: https://www.hampdenbank.com/tpp-registration
 common:
+- type: Overlay
+  url: overlays/hampden-and-co-account-information-api-overlay.yaml
+- type: Overlay
+  url: overlays/hampden-and-co-payment-initiation-api-overlay.yaml
+- type: Overlay
+  url: overlays/hampden-and-co-confirmation-of-funds-api-overlay.yaml
 - type: DomainSecurity
   url: security/hampden-and-co-domain-security.yml
 - type: AgenticAccess
