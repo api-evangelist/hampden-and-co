@@ -1,0 +1,162 @@
+slug: hampden-and-co
+provider: Hampden & Co
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Banking & Capital Markets
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 16
+edges:
+- tag: Domestic Payments
+  spec_file: hampden-and-co-domestic-payments-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.92
+  evidence: POST /domestic-payments  "Initiate a Domestic Payment"
+  reason: Operations initiate and retrieve domestic payment instructions under the Payment Initiation
+    API — clearly payment initiation management.
+- tag: Domestic Payment Consents
+  spec_file: hampden-and-co-domestic-payment-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.9
+  evidence: POST /domestic-payment-consents  "Create a Domestic Payment Consent"; "Confirm availability
+    of funds for a Domestic Payment"; schema OBWriteDomesticConsentResponse5
+  reason: 'UK Open Banking Payment Initiation API: consent capture and authorisation for a domestic payment
+    instruction, i.e. payment instruction capture/validation/authorisation.'
+- tag: Domestic Scheduled Payments
+  spec_file: hampden-and-co-domestic-scheduled-payments-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.9
+  evidence: POST /domestic-scheduled-payments  "Initiate a Domestic Scheduled Payment"
+  reason: Initiation and retrieval of scheduled domestic payment instructions — payment initiation management.
+- tag: Domestic Scheduled Payment Consents
+  spec_file: hampden-and-co-domestic-scheduled-payment-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.88
+  evidence: POST /domestic-scheduled-payment-consents  "Create a Domestic Scheduled Payment Consent"
+  reason: Consent/authorisation capture for a future-dated domestic payment instruction within the Payment
+    Initiation API.
+- tag: Domestic Standing Orders
+  spec_file: hampden-and-co-domestic-standing-orders-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.88
+  evidence: POST /domestic-standing-orders  "Submit a Domestic Standing Order"
+  reason: Submission and retrieval of standing order payment instructions — payment instruction capture
+    and authorisation.
+- tag: International Scheduled Payments
+  spec_file: hampden-and-co-international-scheduled-payments-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.88
+  evidence: POST /international-scheduled-payments — "Initiate an International Scheduled Payment"
+  reason: Open Banking Payment Initiation surface for international (cross-border) payment instructions;
+    operations initiate and retrieve international payments, matching Cross-Border Payment Management.
+- tag: Domestic Standing Order Consents
+  spec_file: hampden-and-co-domestic-standing-order-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.85
+  evidence: POST /domestic-standing-order-consents  "Create a Domestic Standing Order Consent"; schemas
+    OBFrequency6, NumberOfPayments
+  reason: Consent/authorisation capture for recurring domestic payment instructions (standing orders)
+    in the Payment Initiation API.
+- tag: File Payments
+  spec_file: hampden-and-co-file-payments-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.85
+  evidence: POST /file-payments  "Submit a File Payment"; "Get payment details for a File Payment"
+  reason: Submission and status of bulk file payment instructions under Payment Initiation — payment initiation
+    management.
+- tag: International Payments
+  spec_file: hampden-and-co-international-payments-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.85
+  evidence: POST /international-payments  "Initiate an International Payment"; schema OBWriteInternational3
+  reason: Initiation and status of international payment instructions — cross-border payment management.
+- tag: File Payment Consents
+  spec_file: hampden-and-co-file-payment-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.82
+  evidence: POST /file-payment-consents  "Create a File Payment Consent"; "Upload a File for a ConsentId"
+  reason: Bulk/file payment consent capture within the Payment Initiation API; file upload here is the
+    payment instruction batch, not generic file handling.
+- tag: International Scheduled Payments Consents
+  spec_file: hampden-and-co-international-scheduled-payments-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.8
+  evidence: '"Create an International Scheduled Payment Consent"; "Confirm Funds Availability for an International
+    Scheduled Payment"'
+  reason: Consent creation, SCA support data and funds-availability confirmation are the capture/validation/authorisation
+    stage of a payment instruction — Payment Initiation Management.
+- tag: International Standing Orders
+  spec_file: hampden-and-co-international-standing-orders-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.8
+  evidence: POST /international-standing-orders — "Submit an International Standing Order"
+  reason: Recurring international payment instructions submitted and retrieved through payment initiation;
+    international nature points to cross-border payment management.
+- tag: Products
+  spec_file: hampden-and-co-products-api-openapi.yml
+  capability_id: BC-1310.10
+  capability_id_l1: BC-1310
+  capability_name: Product Catalogue Management
+  confidence: 0.78
+  evidence: GET /products — "Get Products"; schemas OB_FeeType1Code, OB_InterestRateType1Code_0, OB_FeeFrequency1Code_1
+  reason: Read access to the bank's product master with fee and interest-rate attributes — banking product
+    catalogue exposure.
+- tag: International Payment Consents
+  spec_file: hampden-and-co-international-payment-consents-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.75
+  evidence: POST /international-payment-consents  "Create an International Payment Consent"; "Confirm
+    Funds Availability for an International Payment"
+  reason: Consent capture and funds confirmation for cross-border payment instructions; cross-border payment
+    management with initiation overlap.
+- tag: International Standing Orders Consents
+  spec_file: hampden-and-co-international-standing-orders-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.75
+  evidence: '"Create an International Standing Order Consent"; schema OBSCASupportData1'
+  reason: Consent/authorisation artefacts preceding submission of an international standing order — payment
+    instruction capture, validation and authorisation.
+- tag: Parties
+  spec_file: hampden-and-co-parties-api-openapi.yml
+  capability_id: BC-1300.40
+  capability_id_l1: BC-1300
+  capability_name: Customer Information Management
+  confidence: 0.75
+  evidence: GET /accounts/{AccountId}/party — "Get Party for an AccountId"; schemas FullLegalName, OBInternalPartyType1Code,
+    OBInternalAccountRole1Code, EmailAddress
+  reason: Exposes the banking customer/party record — legal name, contact details, account role — i.e.
+    customer information management for banking customers.

@@ -559,6 +559,9 @@ apis:
   - type: Registration
     url: https://www.hampdenbank.com/tpp-registration
 common:
+- type: CapabilityMap
+  url: capabilities/hampden-and-co-capability-edges.yml
+  name: Hampden & Co Business Capability Map
 - type: Overlay
   url: overlays/hampden-and-co-account-information-api-overlay.yaml
 - type: Overlay
