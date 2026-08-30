@@ -112,6 +112,8 @@ apis:
   humanURL: https://developer-sandbox.hampdendigital.com/
   baseURL: https://developer-sandbox.hampdendigital.com
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
@@ -484,6 +486,8 @@ apis:
   humanURL: https://developer-sandbox.hampdendigital.com/
   baseURL: https://developer-sandbox.hampdendigital.com
   tags:
+  - Product
+  tags_raw:
   - Products
   properties:
   - type: OpenAPI
@@ -548,6 +552,8 @@ apis:
   humanURL: https://developer-sandbox.hampdendigital.com/
   baseURL: https://developer-sandbox.hampdendigital.com
   tags:
+  - Transaction
+  tags_raw:
   - Transactions
   properties:
   - type: OpenAPI
