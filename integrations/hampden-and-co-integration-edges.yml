@@ -1,0 +1,18 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/hampden-and-co/integrations
+- https://zapier.com/apps/hampden-co/integrations
+- https://n8n.io/integrations/hampden-and-co/
+- https://composio.dev/toolkits/hampden-and-co
+- https://monid.ai/tools/hampden-and-co
+checked:
+- https://composio.dev/toolkits/hampden-and-co
+- https://monid.ai/tools/hampden-and-co
+- https://n8n.io/integrations/hampden-and-co/
+- https://zapier.com/apps/hampden-and-co/integrations
+- https://zapier.com/apps/hampden-co/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
