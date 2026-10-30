@@ -1,4 +1,4 @@
-# Hampden & Co (hampden-and-co)
+# Hampden & Co
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,117 +64,154 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Hampden & Co (trading as Hampden Bank since March 2024) is an independent UK private bank headquartered in Charlotte Square, Edinburgh, with offices in London and Manchester, serving high-net-worth individuals, their families, and their businesses with day-to-day banking, deposits, and specialist lending. Incorporated in 2010 as "Scoban" and launched in 2015, it was the first newly created UK private bank in three decades. It is a shareholder-owned public limited company (SC386922) — not a mutual or building society — authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the PRA.
+Hampden & Co (trading as Hampden Bank since March 2024) is an independent UK private bank headquartered at 20/21 Charlotte Square, Edinburgh, with offices in London and Manchester, serving high-net-worth individuals, their families, and their businesses with day-to-day banking, deposits, and specialist lending. Incorporated in 2010 as "Scoban" and launched in 2015, it was the first newly created UK private bank in three decades; it is a shareholder-owned public limited company (SC386922) - not a mutual or building society - backed by cornerstone shareholders and hundreds of smaller investors, and passed £1 billion in deposits in 2025. It is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the PRA. Although not one of the CMA9 mandated banks, Hampden & Co is an FCA-authorised ASPSP registered with the Open Banking Implementation Entity (OBIE) and exposes a PSD2 dedicated interface: an Open Data reference API plus the OBIE Read/Write family (Account & Transaction Information, Payment Initiation, and Confirmation of Funds), onboarded through a developer sandbox portal and secured with FAPI-grade OAuth2/OIDC, mutual-TLS, PSD2 strong customer authentication, and eIDAS/OBIE certificate-based dynamic client registration.
 
-Hampden & Co is not one of the CMA9 mandated banks, but it is an FCA-authorised ASPSP registered with the Open Banking Implementation Entity (OBIE). It exposes a PSD2 dedicated interface — an Open Data reference API plus the OBIE Read/Write family (Account & Transaction Information, Payment Initiation, and Confirmation of Funds) — onboarded through a developer sandbox portal and secured with FAPI-grade OAuth2/OIDC, mutual-TLS, PSD2 strong customer authentication, and eIDAS/OBIE certificate-based dynamic client registration.
+**Areas:** Financial Services · Banking · Private Banking · Open Banking · PSD2 · OBIE · FAPI · United Kingdom · Payments · Account Information
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/hampden-and-co/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/hampden-and-co/refs/heads/main/apis.yml)
+## Hampden & Co on APIs.io
 
-## Tags
+Everything profiled for Hampden & Co is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/hampden-and-co/](https://apis.io/providers/hampden-and-co/)** — or go straight to one of the APIs or properties below.
 
-- Financial Services
-- Banking
-- Private Banking
-- Open Banking
-- PSD2
-- OBIE
-- FAPI
-- United Kingdom
-- Payments
-- Account Information
+### APIs (29)
 
-## Timestamps
+- [Hampden & Co Open Data API](https://apis.io/apis/hampden-and-co/hampden-and-co-open-data-api/) — Public, unauthenticated Open Data reference API conforming to the OBIE UK Open Banking Open Data standard (product reference data such as personal and…
+- [Hampden & Co Account Access Consents API](https://apis.io/apis/hampden-and-co/hampden-and-co-account-access-consents-api/) — The Account Access Consents API from Hampden & Co — 2 operation(s) for account access consents.
+- [Hampden & Co Accounts API](https://apis.io/apis/hampden-and-co/hampden-and-co-accounts-api/) — The Accounts API from Hampden & Co — 2 operation(s) for accounts.
+- [Hampden & Co Balances API](https://apis.io/apis/hampden-and-co/hampden-and-co-balances-api/) — The Balances API from Hampden & Co — 2 operation(s) for balances.
+- [Hampden & Co Beneficiaries API](https://apis.io/apis/hampden-and-co/hampden-and-co-beneficiaries-api/) — The Beneficiaries API from Hampden & Co — 2 operation(s) for beneficiaries.
+- [Hampden & Co Direct Debits API](https://apis.io/apis/hampden-and-co/hampden-and-co-direct-debits-api/) — The Direct Debits API from Hampden & Co — 2 operation(s) for direct debits.
+- [Hampden & Co Domestic Payment Consents API](https://apis.io/apis/hampden-and-co/hampden-and-co-domestic-payment-consents-api/) — The Domestic Payment Consents API from Hampden & Co — 3 operation(s) for domestic payment consents.
+- [Hampden & Co Domestic Payments API](https://apis.io/apis/hampden-and-co/hampden-and-co-domestic-payments-api/) — The Domestic Payments API from Hampden & Co — 3 operation(s) for domestic payments.
+- [Hampden & Co Domestic Scheduled Payment Consents API](https://apis.io/apis/hampden-and-co/hampden-and-co-domestic-scheduled-payment-consents-api/) — The Domestic Scheduled Payment Consents API from Hampden & Co — 2 operation(s) for domestic scheduled payment consents.
+- [Hampden & Co Domestic Scheduled Payments API](https://apis.io/apis/hampden-and-co/hampden-and-co-domestic-scheduled-payments-api/) — The Domestic Scheduled Payments API from Hampden & Co — 3 operation(s) for domestic scheduled payments.
+- [Hampden & Co Domestic Standing Order Consents API](https://apis.io/apis/hampden-and-co/hampden-and-co-domestic-standing-order-consents-api/) — The Domestic Standing Order Consents API from Hampden & Co — 2 operation(s) for domestic standing order consents.
+- [Hampden & Co Domestic Standing Orders API](https://apis.io/apis/hampden-and-co/hampden-and-co-domestic-standing-orders-api/) — The Domestic Standing Orders API from Hampden & Co — 3 operation(s) for domestic standing orders.
+- [Hampden & Co File Payment Consents API](https://apis.io/apis/hampden-and-co/hampden-and-co-file-payment-consents-api/) — The File Payment Consents API from Hampden & Co — 3 operation(s) for file payment consents.
+- [Hampden & Co File Payments API](https://apis.io/apis/hampden-and-co/hampden-and-co-file-payments-api/) — The File Payments API from Hampden & Co — 4 operation(s) for file payments.
+- [Hampden & Co Funds Confirmation Consents API](https://apis.io/apis/hampden-and-co/hampden-and-co-funds-confirmation-consents-api/) — The Funds Confirmation Consents API from Hampden & Co — 2 operation(s) for funds confirmation consents.
+- [Hampden & Co Funds Confirmations API](https://apis.io/apis/hampden-and-co/hampden-and-co-funds-confirmations-api/) — The Funds Confirmations API from Hampden & Co — 1 operation(s) for funds confirmations.
+- [Hampden & Co International Payment Consents API](https://apis.io/apis/hampden-and-co/hampden-and-co-international-payment-consents-api/) — The International Payment Consents API from Hampden & Co — 3 operation(s) for international payment consents.
+- [Hampden & Co International Payments API](https://apis.io/apis/hampden-and-co/hampden-and-co-international-payments-api/) — The International Payments API from Hampden & Co — 3 operation(s) for international payments.
+- [Hampden & Co International Scheduled Payments API](https://apis.io/apis/hampden-and-co/hampden-and-co-international-scheduled-payments-api/) — The International Scheduled Payments API from Hampden & Co — 3 operation(s) for international scheduled payments.
+- [Hampden & Co International Scheduled Payments Consents API](https://apis.io/apis/hampden-and-co/hampden-and-co-international-scheduled-payments-consents-api/) — The International Scheduled Payments Consents API from Hampden & Co — 3 operation(s) for international scheduled payments consents.
+- [Hampden & Co International Standing Orders API](https://apis.io/apis/hampden-and-co/hampden-and-co-international-standing-orders-api/) — The International Standing Orders API from Hampden & Co — 3 operation(s) for international standing orders.
+- [Hampden & Co International Standing Orders Consents API](https://apis.io/apis/hampden-and-co/hampden-and-co-international-standing-orders-consents-api/) — The International Standing Orders Consents API from Hampden & Co — 2 operation(s) for international standing orders consents.
+- [Hampden & Co Offers API](https://apis.io/apis/hampden-and-co/hampden-and-co-offers-api/) — The Offers API from Hampden & Co — 2 operation(s) for offers.
+- [Hampden & Co Parties API](https://apis.io/apis/hampden-and-co/hampden-and-co-parties-api/) — The Parties API from Hampden & Co — 3 operation(s) for parties.
+- [Hampden & Co Products API](https://apis.io/apis/hampden-and-co/hampden-and-co-products-api/) — The Products API from Hampden & Co — 2 operation(s) for products.
+- [Hampden & Co Scheduled Payments API](https://apis.io/apis/hampden-and-co/hampden-and-co-scheduled-payments-api/) — The Scheduled Payments API from Hampden & Co — 2 operation(s) for scheduled payments.
+- [Hampden & Co Standing Orders API](https://apis.io/apis/hampden-and-co/hampden-and-co-standing-orders-api/) — The Standing Orders API from Hampden & Co — 2 operation(s) for standing orders.
+- [Hampden & Co Statements API](https://apis.io/apis/hampden-and-co/hampden-and-co-statements-api/) — The Statements API from Hampden & Co — 5 operation(s) for statements.
+- [Hampden & Co Transactions API](https://apis.io/apis/hampden-and-co/hampden-and-co-transactions-api/) — The Transactions API from Hampden & Co — 2 operation(s) for transactions.
 
-- **Created:** 2026-07-23
-- **Modified:** 2026-07-23
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Hampden & Co Open Data API
+#### MCP servers (1)
 
-Public, unauthenticated Open Data reference API conforming to the OBIE UK Open Banking Open Data standard. Listed on Hampden & Co's Open Banking register entry; a live Open Data endpoint could not be independently confirmed at bootstrap (the developer portal is a single-page app that returns HTML for all paths).
+Model Context Protocol servers that expose the API to agents.
 
-- **Human URL:** [https://developer-sandbox.hampdendigital.com/](https://developer-sandbox.hampdendigital.com/)
+- [hampden-and-co](https://apis.io/servers/hampden-and-co/hampden-and-co/)
 
-#### Tags
+#### Agentic access (1)
 
-- Open Data
-- Reference Data
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Properties
+- [Hampden And Co Agentic Access](https://apis.io/agentic-access/hampden-and-co/hampden-and-co-agentic-access/)
 
-- [Documentation](https://developer-sandbox.hampdendigital.com/home)
-- [Registration](https://www.openbanking.org.uk/regulated-providers/hampden-co-plc/)
+#### Collections (3)
 
-### Hampden & Co Account & Transaction Information API
+Postman and Open Collection request collections.
 
-OBIE Read/Write Account Information Service (AIS). The bundled OpenAPI is the shared OBIE Read/Write standard (v4.0.1), not a Hampden-proprietary contract; production access requires TPP onboarding with eIDAS/OBIE certificates.
+- [Account and Transaction API Specification](https://apis.io/collections/hampden-and-co/open-hampden-and-co-account-information-api/)
+- [Confirmation of Funds API Specification](https://apis.io/collections/hampden-and-co/open-hampden-and-co-confirmation-of-funds-api/)
+- [Payment Initiation API](https://apis.io/collections/hampden-and-co/open-hampden-and-co-payment-initiation-api/)
 
-- **Human URL:** [https://developer-sandbox.hampdendigital.com/](https://developer-sandbox.hampdendigital.com/)
+#### Overlays (3)
 
-#### Tags
+OpenAPI overlays, including conversational phrasing for each operation.
 
-- Account Information
-- AIS
+- [Hampden And Co Account Information Api Overlay](https://apis.io/overlays/hampden-and-co/hampden-and-co-account-information-api-overlay/)
+- [Hampden And Co Confirmation Of Funds Api Overlay](https://apis.io/overlays/hampden-and-co/hampden-and-co-confirmation-of-funds-api-overlay/)
+- [Hampden And Co Payment Initiation Api Overlay](https://apis.io/overlays/hampden-and-co/hampden-and-co-payment-initiation-api-overlay/)
 
-#### Properties
+#### Security (2)
 
-- [OpenAPI](openapi/hampden-and-co-account-information-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Documentation](https://developer-sandbox.hampdendigital.com/home)
-- [API Reference](https://standards.openbanking.org.uk/api-specifications/latest/)
-- [Registration](https://www.hampdenbank.com/tpp-registration)
+Authentication, trust centre, and vulnerability disclosure.
 
-### Hampden & Co Payment Initiation API
+- [Hampden And Co Authentication](https://apis.io/security/hampden-and-co/hampden-and-co-authentication/)
+- [Hampden And Co Domain Security](https://apis.io/security/hampden-and-co/hampden-and-co-domain-security/)
 
-OBIE Read/Write Payment Initiation Service (PIS). The bundled OpenAPI is the shared OBIE Read/Write standard (v4.0.1), not a Hampden-proprietary contract; production access requires TPP onboarding with eIDAS/OBIE certificates and PSD2 strong customer authentication.
+#### OAuth scopes (1)
 
-- **Human URL:** [https://developer-sandbox.hampdendigital.com/](https://developer-sandbox.hampdendigital.com/)
+The permissions the API asks for.
 
-#### Tags
+- [Hampden And Co Scopes](https://apis.io/scopes/hampden-and-co/hampden-and-co-scopes/)
 
-- Payment Initiation
-- PIS
+## Where to find this API
 
-#### Properties
-
-- [OpenAPI](openapi/hampden-and-co-payment-initiation-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Documentation](https://developer-sandbox.hampdendigital.com/home)
-- [API Reference](https://standards.openbanking.org.uk/api-specifications/latest/)
-- [Registration](https://www.hampdenbank.com/tpp-registration)
-
-### Hampden & Co Confirmation of Funds API
-
-OBIE Read/Write Confirmation of Funds Service (CBPII). The bundled OpenAPI is the shared OBIE Read/Write standard (v4.0.1), not a Hampden-proprietary contract; production access requires TPP onboarding with eIDAS/OBIE certificates.
-
-- **Human URL:** [https://developer-sandbox.hampdendigital.com/](https://developer-sandbox.hampdendigital.com/)
-
-#### Tags
-
-- Confirmation of Funds
-- CBPII
-
-#### Properties
-
-- [OpenAPI](openapi/hampden-and-co-confirmation-of-funds-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Documentation](https://developer-sandbox.hampdendigital.com/home)
-- [API Reference](https://standards.openbanking.org.uk/api-specifications/latest/)
-- [Registration](https://www.hampdenbank.com/tpp-registration)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.hampdenbank.com/)
-- [Developer Portal](https://developer-sandbox.hampdendigital.com/)
 - [Documentation](https://developer-sandbox.hampdendigital.com/home)
-- [Sign Up (TPP Registration)](https://www.hampdenbank.com/tpp-registration)
-- [Open Banking Register](https://www.openbanking.org.uk/regulated-providers/hampden-co-plc/)
-- [LinkedIn](https://www.linkedin.com/company/hampden-bank)
-- [Blog](https://www.hampdenbank.com/insights)
+- [API reference](https://standards.openbanking.org.uk/api-specifications/latest/)
+- [Sign up](https://www.hampdenbank.com/tpp-registration)
 - [Support](https://www.hampdenbank.com/contact-us)
-- [Terms of Service](https://www.hampdenbank.com/terms-conditions)
-- [Privacy Policy](https://www.hampdenbank.com/privacy-notice)
-- [Cookie Policy](https://www.hampdenbank.com/cookie-policy)
+- [Blog](https://www.hampdenbank.com/insights)
+- [Compliance](https://www.openbanking.org.uk/regulated-providers/hampden-co-plc/)
+- [Terms of service](https://www.hampdenbank.com/terms-conditions)
+- [Privacy policy](https://www.hampdenbank.com/privacy-notice)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 38.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 49.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 28.0 |
+| Access clarity | 42.1 |
+
+**Agent readiness 35.4** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | verified |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | verified |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 48.0** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/hampden-and-co/](https://apis.io/providers/hampden-and-co/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Hampden & Co: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/hampden-and-co/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
